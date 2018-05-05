@@ -80,6 +80,7 @@
             this.textBox_userName.Name = "textBox_userName";
             this.textBox_userName.Size = new System.Drawing.Size(100, 21);
             this.textBox_userName.TabIndex = 4;
+            this.textBox_userName.Text = "2015210793";
             // 
             // textBox_password
             // 
@@ -88,6 +89,7 @@
             this.textBox_password.PasswordChar = '*';
             this.textBox_password.Size = new System.Drawing.Size(100, 21);
             this.textBox_password.TabIndex = 5;
+            this.textBox_password.Text = "123456";
             // 
             // Form_login
             // 

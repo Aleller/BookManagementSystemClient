@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookManagementSystemClient
 {
-    public partial class Form_operationUIForGuest : Form
+    public partial class Form_operationUIFirst : Form
     {
-        public Form_operationUIForGuest()
+        public Form_operationUIFirst()
         {
             InitializeComponent();
         }
