@@ -29,7 +29,11 @@ namespace BookManagementSystemClient
 
                 if (success)
                 {
-                    Console.WriteLine("OK");
+                    new System.Threading.Thread(() =>
+                    {
+                        Application.Run(new Form_operationUIForGuest());
+                    }).Start();
+                    this.Close();
                 }
                 else
                 {
@@ -39,6 +43,14 @@ namespace BookManagementSystemClient
             {
                 MessageBox.Show("网络异常");
             }
+        }
+
+        private void button_register_Click(object sender, EventArgs e)
+        {
+            new System.Threading.Thread(() =>
+            {
+                Application.Run(new Form_register());
+            }).Start();
         }
     }
 }

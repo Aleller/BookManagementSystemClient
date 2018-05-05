@@ -54,6 +54,7 @@
             this.button_register.TabIndex = 1;
             this.button_register.Text = "注册";
             this.button_register.UseVisualStyleBackColor = true;
+            this.button_register.Click += new System.EventHandler(this.button_register_Click);
             // 
             // label_userName
             // 
