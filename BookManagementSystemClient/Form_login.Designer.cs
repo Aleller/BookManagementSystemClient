@@ -38,7 +38,7 @@
             // 
             // button_login
             // 
-            this.button_login.Location = new System.Drawing.Point(52, 185);
+            this.button_login.Location = new System.Drawing.Point(52, 160);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(75, 23);
             this.button_login.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             // button_register
             // 
-            this.button_register.Location = new System.Drawing.Point(172, 185);
+            this.button_register.Location = new System.Drawing.Point(158, 160);
             this.button_register.Name = "button_register";
             this.button_register.Size = new System.Drawing.Size(75, 23);
             this.button_register.TabIndex = 1;
@@ -58,7 +58,7 @@
             // label_userName
             // 
             this.label_userName.AutoSize = true;
-            this.label_userName.Location = new System.Drawing.Point(27, 46);
+            this.label_userName.Location = new System.Drawing.Point(74, 46);
             this.label_userName.Name = "label_userName";
             this.label_userName.Size = new System.Drawing.Size(53, 12);
             this.label_userName.TabIndex = 2;
@@ -67,7 +67,7 @@
             // label_password
             // 
             this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(29, 97);
+            this.label_password.Location = new System.Drawing.Point(74, 90);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(41, 12);
             this.label_password.TabIndex = 3;
