@@ -44,6 +44,7 @@
             this.button_login.TabIndex = 0;
             this.button_login.Text = "登录";
             this.button_login.UseVisualStyleBackColor = true;
+            this.button_login.Click += new System.EventHandler(this.button_login_Click);
             // 
             // button_register
             // 
@@ -83,6 +84,7 @@
             // 
             this.textBox_password.Location = new System.Drawing.Point(133, 87);
             this.textBox_password.Name = "textBox_password";
+            this.textBox_password.PasswordChar = '*';
             this.textBox_password.Size = new System.Drawing.Size(100, 21);
             this.textBox_password.TabIndex = 5;
             // 
