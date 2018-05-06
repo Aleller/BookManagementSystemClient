@@ -37,6 +37,7 @@
             this.columnHeader_TN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_dateOfReturn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_dateOfBorrow = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_position = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // radioButton_displayAll
@@ -70,7 +71,8 @@
             this.columnHeader_title,
             this.columnHeader_author,
             this.columnHeader_dateOfBorrow,
-            this.columnHeader_dateOfReturn});
+            this.columnHeader_dateOfReturn,
+            this.columnHeader_position});
             this.listView_borrowedBooks.HoverSelection = true;
             this.listView_borrowedBooks.Location = new System.Drawing.Point(12, 34);
             this.listView_borrowedBooks.Name = "listView_borrowedBooks";
@@ -86,7 +88,7 @@
             // columnHeader_title
             // 
             this.columnHeader_title.Text = "书名";
-            this.columnHeader_title.Width = 199;
+            this.columnHeader_title.Width = 118;
             // 
             // columnHeader_author
             // 
@@ -101,12 +103,17 @@
             // columnHeader_dateOfReturn
             // 
             this.columnHeader_dateOfReturn.Text = "归还日期";
-            this.columnHeader_dateOfReturn.Width = 135;
+            this.columnHeader_dateOfReturn.Width = 106;
             // 
             // columnHeader_dateOfBorrow
             // 
             this.columnHeader_dateOfBorrow.Text = "借阅日期";
-            this.columnHeader_dateOfBorrow.Width = 129;
+            this.columnHeader_dateOfBorrow.Width = 105;
+            // 
+            // columnHeader_position
+            // 
+            this.columnHeader_position.Text = "馆藏地";
+            this.columnHeader_position.Width = 108;
             // 
             // Form_borrowHistory
             // 
@@ -134,5 +141,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader_TN;
         private System.Windows.Forms.ColumnHeader columnHeader_dateOfReturn;
         private System.Windows.Forms.ColumnHeader columnHeader_dateOfBorrow;
+        private System.Windows.Forms.ColumnHeader columnHeader_position;
     }
 }

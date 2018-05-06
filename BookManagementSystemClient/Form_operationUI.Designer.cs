@@ -189,8 +189,9 @@
             // 预约信息ToolStripMenuItem
             // 
             this.预约信息ToolStripMenuItem.Name = "预约信息ToolStripMenuItem";
-            this.预约信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.预约信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.预约信息ToolStripMenuItem.Text = "预约信息";
+            this.预约信息ToolStripMenuItem.Click += new System.EventHandler(this.预约信息ToolStripMenuItem_Click);
             // 
             // 我的书架ToolStripMenuItem
             // 

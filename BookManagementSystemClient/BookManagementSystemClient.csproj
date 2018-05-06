@@ -53,6 +53,12 @@
     <Compile Include="ChildWindow\Form_borrowHistory.Designer.cs">
       <DependentUpon>Form_borrowHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildWindow\Form_orderInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildWindow\Form_orderInformation.Designer.cs">
+      <DependentUpon>Form_orderInformation.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildWindow\Form_personalInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +89,9 @@
     <Compile Include="Util\HttpHandler.cs" />
     <EmbeddedResource Include="ChildWindow\Form_borrowHistory.resx">
       <DependentUpon>Form_borrowHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildWindow\Form_orderInformation.resx">
+      <DependentUpon>Form_orderInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_personalInformation.resx">
       <DependentUpon>Form_personalInformation.cs</DependentUpon>
