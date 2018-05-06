@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookManagementSystemClient
+namespace BookManagementSystemClient.ChildWindow
 {
-    public partial class Form_operationUIFirst : Form
+    public partial class Form_personalInformation : Form
     {
-        public Form_operationUIFirst()
+        public Form_personalInformation()
         {
             InitializeComponent();
         }

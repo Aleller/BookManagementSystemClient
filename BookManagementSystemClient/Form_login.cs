@@ -31,7 +31,7 @@ namespace BookManagementSystemClient
                 {
                     new System.Threading.Thread(() =>
                     {
-                        Application.Run(new Form_operationUIFirst());
+                        Application.Run(new Form_operationUI());
                     }).Start();
                     this.Close();
                 }
