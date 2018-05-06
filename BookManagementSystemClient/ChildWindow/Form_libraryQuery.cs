@@ -15,6 +15,9 @@ namespace BookManagementSystemClient.ChildWindow
         public Form_libraryQuery()
         {
             InitializeComponent();
+            this.comboBox_queryType.SelectedIndex = 0;
+            this.comboBox_sortordProperty.SelectedIndex = 0;
+            this.comboBox_sortordUpDown.SelectedIndex = 0;
         }
     }
 }
