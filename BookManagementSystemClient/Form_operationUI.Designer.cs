@@ -240,6 +240,7 @@
             this.检索历史ToolStripMenuItem.Name = "检索历史ToolStripMenuItem";
             this.检索历史ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.检索历史ToolStripMenuItem.Text = "检索历史";
+            this.检索历史ToolStripMenuItem.Click += new System.EventHandler(this.检索历史ToolStripMenuItem_Click);
             // 
             // 书目检索ToolStripMenuItem
             // 
