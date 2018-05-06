@@ -57,14 +57,14 @@
             this.listView_borrowedBooks = new System.Windows.Forms.ListView();
             this.columnHeader_number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_publisher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_ISBN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_subject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_TN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label_borrowedBookAmount = new System.Windows.Forms.Label();
             this.columnHeader_dateOfReturn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label_borrowedBookAmount = new System.Windows.Forms.Label();
             this.groupBox_myHomePage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox_borrowedBooks.SuspendLayout();
@@ -169,20 +169,20 @@
             // 我的首页ToolStripMenuItem
             // 
             this.我的首页ToolStripMenuItem.Name = "我的首页ToolStripMenuItem";
-            this.我的首页ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.我的首页ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.我的首页ToolStripMenuItem.Text = "我的首页";
             // 
             // 证件信息ToolStripMenuItem
             // 
             this.证件信息ToolStripMenuItem.Name = "证件信息ToolStripMenuItem";
-            this.证件信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.证件信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.证件信息ToolStripMenuItem.Text = "证件信息";
             this.证件信息ToolStripMenuItem.Click += new System.EventHandler(this.证件信息ToolStripMenuItem_Click);
             // 
             // 借阅历史ToolStripMenuItem
             // 
             this.借阅历史ToolStripMenuItem.Name = "借阅历史ToolStripMenuItem";
-            this.借阅历史ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.借阅历史ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.借阅历史ToolStripMenuItem.Text = "借阅历史";
             this.借阅历史ToolStripMenuItem.Click += new System.EventHandler(this.借阅历史ToolStripMenuItem_Click);
             // 
@@ -231,13 +231,14 @@
             // 我的书评ToolStripMenuItem
             // 
             this.我的书评ToolStripMenuItem.Name = "我的书评ToolStripMenuItem";
-            this.我的书评ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.我的书评ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.我的书评ToolStripMenuItem.Text = "我的书评";
+            this.我的书评ToolStripMenuItem.Click += new System.EventHandler(this.我的书评ToolStripMenuItem_Click);
             // 
             // 检索历史ToolStripMenuItem
             // 
             this.检索历史ToolStripMenuItem.Name = "检索历史ToolStripMenuItem";
-            this.检索历史ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.检索历史ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.检索历史ToolStripMenuItem.Text = "检索历史";
             // 
             // 书目检索ToolStripMenuItem
@@ -314,6 +315,10 @@
             // 
             this.columnHeader_title.Text = "书名";
             // 
+            // columnHeader_author
+            // 
+            this.columnHeader_author.Text = "责任人";
+            // 
             // columnHeader_publisher
             // 
             this.columnHeader_publisher.Text = "发行商";
@@ -326,10 +331,6 @@
             // 
             this.columnHeader_price.Text = "定价";
             // 
-            // columnHeader_author
-            // 
-            this.columnHeader_author.Text = "责任人";
-            // 
             // columnHeader_subject
             // 
             this.columnHeader_subject.Text = "学科主题";
@@ -339,6 +340,10 @@
             this.columnHeader_TN.Text = "中图法分类号";
             this.columnHeader_TN.Width = 89;
             // 
+            // columnHeader_dateOfReturn
+            // 
+            this.columnHeader_dateOfReturn.Text = "归还日期";
+            // 
             // label_borrowedBookAmount
             // 
             this.label_borrowedBookAmount.AutoSize = true;
@@ -347,10 +352,6 @@
             this.label_borrowedBookAmount.Size = new System.Drawing.Size(71, 12);
             this.label_borrowedBookAmount.TabIndex = 0;
             this.label_borrowedBookAmount.Text = "已借数量：0";
-            // 
-            // columnHeader_dateOfReturn
-            // 
-            this.columnHeader_dateOfReturn.Text = "归还日期";
             // 
             // Form_operationUI
             // 
