@@ -55,5 +55,18 @@ namespace BookManagementSystemClient
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void 我的书架ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChildWindow.Form_myBookshelf child = new ChildWindow.Form_myBookshelf();
+                child.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

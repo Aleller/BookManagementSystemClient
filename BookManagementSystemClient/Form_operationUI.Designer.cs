@@ -196,8 +196,9 @@
             // 我的书架ToolStripMenuItem
             // 
             this.我的书架ToolStripMenuItem.Name = "我的书架ToolStripMenuItem";
-            this.我的书架ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.我的书架ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.我的书架ToolStripMenuItem.Text = "我的书架";
+            this.我的书架ToolStripMenuItem.Click += new System.EventHandler(this.我的书架ToolStripMenuItem_Click);
             // 
             // 书刊遗失ToolStripMenuItem
             // 
@@ -286,10 +287,10 @@
             this.listView_borrowedBooks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader_number,
             this.columnHeader_title,
+            this.columnHeader_author,
             this.columnHeader_publisher,
             this.columnHeader_ISBN,
             this.columnHeader_price,
-            this.columnHeader_author,
             this.columnHeader_subject,
             this.columnHeader_TN,
             this.columnHeader_dateOfReturn});
@@ -323,7 +324,7 @@
             // 
             // columnHeader_author
             // 
-            this.columnHeader_author.Text = "作者简介";
+            this.columnHeader_author.Text = "责任人";
             // 
             // columnHeader_subject
             // 
