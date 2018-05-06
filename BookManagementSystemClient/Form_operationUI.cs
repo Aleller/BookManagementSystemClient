@@ -81,5 +81,18 @@ namespace BookManagementSystemClient
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void 读者挂失ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChildWindow.Form_reportLoss child = new ChildWindow.Form_reportLoss();
+                child.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

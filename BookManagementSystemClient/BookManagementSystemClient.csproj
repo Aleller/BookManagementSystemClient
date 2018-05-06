@@ -77,6 +77,12 @@
     <Compile Include="ChildWindow\Form_personalInformation.Designer.cs">
       <DependentUpon>Form_personalInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildWindow\Form_reportLoss.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildWindow\Form_reportLoss.Designer.cs">
+      <DependentUpon>Form_reportLoss.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Form_login.cs">
       <SubType>Form</SubType>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_personalInformation.resx">
       <DependentUpon>Form_personalInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildWindow\Form_reportLoss.resx">
+      <DependentUpon>Form_reportLoss.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>

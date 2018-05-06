@@ -210,8 +210,9 @@
             // 读者挂失ToolStripMenuItem
             // 
             this.读者挂失ToolStripMenuItem.Name = "读者挂失ToolStripMenuItem";
-            this.读者挂失ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.读者挂失ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.读者挂失ToolStripMenuItem.Text = "读者挂失";
+            this.读者挂失ToolStripMenuItem.Click += new System.EventHandler(this.读者挂失ToolStripMenuItem_Click);
             // 
             // 账目清单ToolStripMenuItem
             // 
