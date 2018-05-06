@@ -77,6 +77,12 @@
     <Compile Include="ChildWindow\Form_orderInformation.Designer.cs">
       <DependentUpon>Form_orderInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildWindow\Form_pay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildWindow\Form_pay.Designer.cs">
+      <DependentUpon>Form_pay.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildWindow\Form_personalInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_orderInformation.resx">
       <DependentUpon>Form_orderInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildWindow\Form_pay.resx">
+      <DependentUpon>Form_pay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_personalInformation.resx">
       <DependentUpon>Form_personalInformation.cs</DependentUpon>

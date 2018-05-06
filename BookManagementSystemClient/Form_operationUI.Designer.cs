@@ -224,8 +224,9 @@
             // 违章缴款ToolStripMenuItem
             // 
             this.违章缴款ToolStripMenuItem.Name = "违章缴款ToolStripMenuItem";
-            this.违章缴款ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.违章缴款ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.违章缴款ToolStripMenuItem.Text = "违章缴款";
+            this.违章缴款ToolStripMenuItem.Click += new System.EventHandler(this.违章缴款ToolStripMenuItem_Click);
             // 
             // 我的书评ToolStripMenuItem
             // 
