@@ -203,8 +203,9 @@
             // 书刊遗失ToolStripMenuItem
             // 
             this.书刊遗失ToolStripMenuItem.Name = "书刊遗失ToolStripMenuItem";
-            this.书刊遗失ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.书刊遗失ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.书刊遗失ToolStripMenuItem.Text = "书刊遗失";
+            this.书刊遗失ToolStripMenuItem.Click += new System.EventHandler(this.书刊遗失ToolStripMenuItem_Click);
             // 
             // 读者挂失ToolStripMenuItem
             // 

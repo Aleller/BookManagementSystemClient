@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChildWindow\Form_booksLost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildWindow\Form_booksLost.Designer.cs">
+      <DependentUpon>Form_booksLost.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChildWindow\Form_borrowHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -93,6 +99,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\HttpHandler.cs" />
+    <EmbeddedResource Include="ChildWindow\Form_booksLost.resx">
+      <DependentUpon>Form_booksLost.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_borrowHistory.resx">
       <DependentUpon>Form_borrowHistory.cs</DependentUpon>
     </EmbeddedResource>
