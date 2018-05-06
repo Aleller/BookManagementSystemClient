@@ -255,8 +255,9 @@
             // 馆藏检索ToolStripMenuItem
             // 
             this.馆藏检索ToolStripMenuItem.Name = "馆藏检索ToolStripMenuItem";
-            this.馆藏检索ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.馆藏检索ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.馆藏检索ToolStripMenuItem.Text = "馆藏检索";
+            this.馆藏检索ToolStripMenuItem.Click += new System.EventHandler(this.馆藏检索ToolStripMenuItem_Click);
             // 
             // 简单检索ToolStripMenuItem
             // 

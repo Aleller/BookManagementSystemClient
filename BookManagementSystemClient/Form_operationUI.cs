@@ -146,5 +146,18 @@ namespace BookManagementSystemClient
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void 馆藏检索ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChildWindow.Form_libraryQuery child = new ChildWindow.Form_libraryQuery();
+                child.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
