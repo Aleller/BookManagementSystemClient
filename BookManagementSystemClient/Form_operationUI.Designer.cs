@@ -217,8 +217,9 @@
             // 账目清单ToolStripMenuItem
             // 
             this.账目清单ToolStripMenuItem.Name = "账目清单ToolStripMenuItem";
-            this.账目清单ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.账目清单ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.账目清单ToolStripMenuItem.Text = "账目清单";
+            this.账目清单ToolStripMenuItem.Click += new System.EventHandler(this.账目清单ToolStripMenuItem_Click);
             // 
             // 违章缴款ToolStripMenuItem
             // 

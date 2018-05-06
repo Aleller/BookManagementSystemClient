@@ -94,5 +94,18 @@ namespace BookManagementSystemClient
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void 账目清单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ChildWindow.Form_bill child = new ChildWindow.Form_bill();
+                child.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
