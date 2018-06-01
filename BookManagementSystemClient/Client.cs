@@ -1,7 +1,10 @@
 ﻿using BookManagementSystemClient.Util;
+using Org.BouncyCastle.Crypto.Parameters;
+using Org.BouncyCastle.Security;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +12,31 @@ using System.Web.Script.Serialization;
 
 namespace BookManagementSystemClient
 {
+    static class cipher
+    {
+        public static string EncryptByRSA(string plaintext, string publicKey)
+        {
+            UnicodeEncoding ByteConverter = new UnicodeEncoding();
+            byte[] dataToEncrypt = ByteConverter.GetBytes(plaintext);
+            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
+            {
+                RSA.FromXmlString(publicKey);
+                byte[] encryptedData = RSA.Encrypt(dataToEncrypt, false);
+                return Convert.ToBase64String(encryptedData);
+            }
+        }
+
+        public static string ConvertToXmlPublicJavaKey(this RSA rsa, string publicJavaKey)
+        {
+            RsaKeyParameters publicKeyParam = (RsaKeyParameters)PublicKeyFactory.CreateKey(Convert.FromBase64String(publicJavaKey));
+            string xmlpublicKey = string.Format("<RSAKeyValue><Modulus>{0}</Modulus><Exponent>{1}</Exponent></RSAKeyValue>",
+            Convert.ToBase64String(publicKeyParam.Modulus.ToByteArrayUnsigned()),
+            Convert.ToBase64String(publicKeyParam.Exponent.ToByteArrayUnsigned()));
+            return xmlpublicKey;
+        }
+
+    }
+
     class Client
     {
         /// <summary>
@@ -22,12 +50,25 @@ namespace BookManagementSystemClient
         {
             try
             {
-                string url = "http://45.77.191.48:9090/login/submit";
-                string data = "studentID=" + userName + "&" + "password=" + password;
-
-                //发送并接收json
+                //先获得publickeyConent
+                String publickeyConent;
+                string url = "http://45.77.191.48:7575/public";
                 HttpHandler httpHandler = new HttpHandler();
-                string retStr = httpHandler.HttpPost(url, data);
+                publickeyConent = httpHandler.HttpGet(url, "");
+
+                //对发送的密码进行加密
+                RSACryptoServiceProvider RSAalg = new RSACryptoServiceProvider();
+                string publickeyXml = cipher.ConvertToXmlPublicJavaKey(RSAalg, publickeyConent);
+                string encryptedPassword = cipher.EncryptByRSA(password, publickeyXml);
+
+                //..
+
+                //发送并接收
+                var dic = new Dictionary<string, string>();
+                dic.Add("id", userName);
+                dic.Add("pw", encryptedPassword);
+                url = "http://45.77.191.48:7575/login";
+                string retStr = httpHandler.HttpPost(url, dic);
 
                 //解析json
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
@@ -43,6 +84,11 @@ namespace BookManagementSystemClient
             {
                 throw e;
             }
+        }
+
+        public bool Register(string userName, string password)
+        {
+            return false;
         }
     }
 }
