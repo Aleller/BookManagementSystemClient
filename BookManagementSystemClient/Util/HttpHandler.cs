@@ -19,9 +19,9 @@ namespace BookManagementSystemClient.Util
         public string HttpPost(string url, Dictionary<string,string> dic)
         {
             string result = string.Empty;
-            HttpWebRequest req = (HttpWebRequest)WebRequest.Create(url);
-            req.Method = "POST";
-            req.ContentType = "application/x-www-form-urlencoded";
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
+            request.Method = "POST";
+            request.ContentType = "application/x-www-form-urlencoded";
 
             #region 添加Post 参数
             StringBuilder builder = new StringBuilder();
@@ -34,18 +34,18 @@ namespace BookManagementSystemClient.Util
                 i++;
             }
             byte[] data = Encoding.UTF8.GetBytes(builder.ToString());
-            req.ContentLength = data.Length;
-            using (Stream reqStream = req.GetRequestStream())
+            request.ContentLength = data.Length;
+            using (Stream requestStream = request.GetRequestStream())
             {
-                reqStream.Write(data, 0, data.Length);
-                reqStream.Close();
+                requestStream.Write(data, 0, data.Length);
+                requestStream.Close();
             }
             #endregion
 
-            HttpWebResponse resp = (HttpWebResponse)req.GetResponse();
-            Stream stream = resp.GetResponseStream();
+            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+            Stream responseStream = response.GetResponseStream();
             //获取响应内容
-            using (StreamReader reader = new StreamReader(stream, Encoding.UTF8))
+            using (StreamReader reader = new StreamReader(responseStream, Encoding.UTF8))
             {
                 result = reader.ReadToEnd();
             }
@@ -59,14 +59,14 @@ namespace BookManagementSystemClient.Util
             request.ContentType = "text/html;charset=utf-8";
 
             HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-            Stream myResponseStream = response.GetResponseStream();
-            StreamReader myStreamReader = new StreamReader(myResponseStream, Encoding.GetEncoding("utf-8"));
-            String retString = myStreamReader.ReadToEnd();
-            myStreamReader.Close();
-            myResponseStream.Close();
+            Stream responseStream = response.GetResponseStream();
+            StreamReader streamReader = new StreamReader(responseStream, Encoding.GetEncoding("utf-8"));
+            string returnString = streamReader.ReadToEnd();
+            streamReader.Close();
+            responseStream.Close();
 
 
-            return retString;
+            return returnString;
         }
     }
 }

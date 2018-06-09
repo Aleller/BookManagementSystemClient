@@ -12,31 +12,6 @@ using System.Web.Script.Serialization;
 
 namespace BookManagementSystemClient
 {
-    static class cipher
-    {
-        public static string EncryptByRSA(string plaintext, string publicKey)
-        {
-            UnicodeEncoding ByteConverter = new UnicodeEncoding();
-            byte[] dataToEncrypt = ByteConverter.GetBytes(plaintext);
-            using (RSACryptoServiceProvider RSA = new RSACryptoServiceProvider())
-            {
-                RSA.FromXmlString(publicKey);
-                byte[] encryptedData = RSA.Encrypt(dataToEncrypt, false);
-                return Convert.ToBase64String(encryptedData);
-            }
-        }
-
-        public static string ConvertToXmlPublicJavaKey(this RSA rsa, string publicJavaKey)
-        {
-            RsaKeyParameters publicKeyParam = (RsaKeyParameters)PublicKeyFactory.CreateKey(Convert.FromBase64String(publicJavaKey));
-            string xmlpublicKey = string.Format("<RSAKeyValue><Modulus>{0}</Modulus><Exponent>{1}</Exponent></RSAKeyValue>",
-            Convert.ToBase64String(publicKeyParam.Modulus.ToByteArrayUnsigned()),
-            Convert.ToBase64String(publicKeyParam.Exponent.ToByteArrayUnsigned()));
-            return xmlpublicKey;
-        }
-
-    }
-
     class Client
     {
         /// <summary>
@@ -50,24 +25,19 @@ namespace BookManagementSystemClient
         {
             try
             {
-                //先获得publickeyConent
-                String publickeyConent;
-                string url = "http://45.77.191.48:7575/public";
-                HttpHandler httpHandler = new HttpHandler();
-                publickeyConent = httpHandler.HttpGet(url, "");
-
                 //对发送的密码进行加密
-                RSACryptoServiceProvider RSAalg = new RSACryptoServiceProvider();
-                string publickeyXml = cipher.ConvertToXmlPublicJavaKey(RSAalg, publickeyConent);
-                string encryptedPassword = cipher.EncryptByRSA(password, publickeyXml);
+                string encryptedPassword = Cipher.AutoEncrypt(password);
 
-                //..
+                //加号在经过传递后会变成空格，所以这里先转了
+                userName = userName.Replace("+", "%2B");
+                encryptedPassword = encryptedPassword.Replace("+", "%2B");
 
                 //发送并接收
                 var dic = new Dictionary<string, string>();
                 dic.Add("id", userName);
                 dic.Add("pw", encryptedPassword);
-                url = "http://45.77.191.48:7575/login";
+                string url = "http://45.77.191.48:7575/login";
+                HttpHandler httpHandler = new HttpHandler();
                 string retStr = httpHandler.HttpPost(url, dic);
 
                 //解析json
@@ -75,20 +45,59 @@ namespace BookManagementSystemClient
                 dynamic retStrContent = serializer.Deserialize<dynamic>(retStr);
                 string status = retStrContent["status"];
 
-                if (status == "success")
+                if (status == "successful")
                 {
                     return true;
                 }
                 return false;
             }catch(Exception e)
             {
+                Console.WriteLine(e.ToString());
                 throw e;
             }
         }
 
         public bool Register(string userName, string password)
         {
-            return false;
+            //对发送的密码进行加密
+            string encryptedPassword = Cipher.AutoEncrypt(password);
+
+            /*
+            string base64UserName;
+            string base64EncryptedPassword;
+
+            byte[] buffer = Convert.FromBase64String(userName);
+            base64UserName = Convert.ToBase64String(buffer).Replace("+","%2B");
+            buffer = Convert.FromBase64String(encryptedPassword);
+            base64EncryptedPassword = Convert.ToBase64String(buffer).Replace("+", "%2B");
+            */
+
+            //加号在经过传递后会变成空格，所以这里先转了
+            userName = userName.Replace("+", "%2B");
+            encryptedPassword = encryptedPassword.Replace("+", "%2B");
+
+            //发送并接收
+            var dic = new Dictionary<string, string>();
+            dic.Add("id", userName);
+            dic.Add("pw", encryptedPassword);
+            string url = "http://45.77.191.48:7575/register";
+            HttpHandler httpHandler = new HttpHandler();
+            string retStr = httpHandler.HttpPost(url, dic);
+            /*考虑一下需不需要封装“发送并接收”的操作*/
+            
+            //解析json
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            dynamic retStrContent = serializer.Deserialize<dynamic>(retStr);
+            string status = retStrContent["status"];
+
+            if (status == "successful")
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+            
         }
     }
 }

@@ -70,20 +70,25 @@
             this.textBox_inputUserName.Name = "textBox_inputUserName";
             this.textBox_inputUserName.Size = new System.Drawing.Size(100, 21);
             this.textBox_inputUserName.TabIndex = 3;
+            this.textBox_inputUserName.Text = "2015210793";
             // 
             // textBox_inputPassword1
             // 
             this.textBox_inputPassword1.Location = new System.Drawing.Point(137, 83);
             this.textBox_inputPassword1.Name = "textBox_inputPassword1";
+            this.textBox_inputPassword1.PasswordChar = '*';
             this.textBox_inputPassword1.Size = new System.Drawing.Size(100, 21);
             this.textBox_inputPassword1.TabIndex = 4;
+            this.textBox_inputPassword1.Text = "123456";
             // 
             // textBox_inputPassword2
             // 
             this.textBox_inputPassword2.Location = new System.Drawing.Point(137, 127);
             this.textBox_inputPassword2.Name = "textBox_inputPassword2";
+            this.textBox_inputPassword2.PasswordChar = '*';
             this.textBox_inputPassword2.Size = new System.Drawing.Size(100, 21);
             this.textBox_inputPassword2.TabIndex = 5;
+            this.textBox_inputPassword2.Text = "123456";
             // 
             // button_register
             // 

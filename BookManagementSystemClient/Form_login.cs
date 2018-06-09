@@ -27,6 +27,9 @@ namespace BookManagementSystemClient
 
                 bool success = c.Login(userName, password);
 
+                //测试用
+                //success = true;
+
                 if (success)
                 {
                     new System.Threading.Thread(() =>
@@ -51,6 +54,15 @@ namespace BookManagementSystemClient
             {
                 Application.Run(new Form_register());
             }).Start();
+        }
+
+        private void button_systemAdministrator_Click(object sender, EventArgs e)
+        {
+            new System.Threading.Thread(() =>
+            {
+                Application.Run(new SystemAdministratorChildWindow.Form_SystemAdministratorLogin());
+            }).Start();
+            this.Close();
         }
     }
 }
