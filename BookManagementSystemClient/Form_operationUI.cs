@@ -12,29 +12,20 @@ namespace BookManagementSystemClient
 {
     public partial class Form_operationUI : Form
     {
-        public Form_operationUI()
+        private Client client;
+
+        public Form_operationUI(Client client)
         {
             InitializeComponent();
-        }
 
-        private void 证件信息ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChildWindow.Form_personalInformation child = new ChildWindow.Form_personalInformation();
-                child.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            this.client = client;
         }
 
         private void 借阅历史ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                ChildWindow.Form_borrowHistory child = new ChildWindow.Form_borrowHistory();
+                ChildWindow.Form_borrowHistory child = new ChildWindow.Form_borrowHistory(this.client);
                 child.ShowDialog();
             }
             catch (Exception ex)
@@ -47,85 +38,7 @@ namespace BookManagementSystemClient
         {
             try
             {
-                ChildWindow.Form_orderInformation child = new ChildWindow.Form_orderInformation();
-                child.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void 我的书架ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChildWindow.Form_myBookshelf child = new ChildWindow.Form_myBookshelf();
-                child.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void 书刊遗失ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChildWindow.Form_booksLost child = new ChildWindow.Form_booksLost();
-                child.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void 读者挂失ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChildWindow.Form_reportLoss child = new ChildWindow.Form_reportLoss();
-                child.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void 账目清单ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChildWindow.Form_bill child = new ChildWindow.Form_bill();
-                child.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void 违章缴款ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChildWindow.Form_pay child = new ChildWindow.Form_pay();
-                child.ShowDialog();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void 我的书评ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                ChildWindow.Form_review child = new ChildWindow.Form_review();
+                ChildWindow.Form_orderInformation child = new ChildWindow.Form_orderInformation(this.client);
                 child.ShowDialog();
             }
             catch (Exception ex)
@@ -151,7 +64,7 @@ namespace BookManagementSystemClient
         {
             try
             {
-                ChildWindow.Form_libraryQuery child = new ChildWindow.Form_libraryQuery();
+                ChildWindow.Form_libraryQuery child = new ChildWindow.Form_libraryQuery(this.client);
                 child.ShowDialog();
             }
             catch (Exception ex)

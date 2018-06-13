@@ -15,6 +15,8 @@ namespace BookManagementSystemClient
         public Form_login()
         {
             InitializeComponent();
+
+            comboBox_userGroup.SelectedIndex = 0;
         }
 
         private void button_login_Click(object sender, EventArgs e)
@@ -25,16 +27,31 @@ namespace BookManagementSystemClient
                 string userName = textBox_userName.Text.Trim();
                 string password = textBox_password.Text.Trim();
 
-                bool success = c.Login(userName, password);
+                int userGroup_int = comboBox_userGroup.SelectedIndex;
+                string userGroup;
+                switch (userGroup_int)
+                {
+                    case 0:
+                        userGroup = "Reader";
+                        break;
+                    case 1:
+                        userGroup = "BookAdministrator";
+                        break;
+                    case 2:
+                        userGroup = "SystemAdministrator";
+                        break;
+                    default:
+                        userGroup = "error";
+                        break;
+                }
 
-                //测试用
-                //success = true;
+                bool success = c.Login(userName, password, userGroup);
 
                 if (success)
                 {
                     new System.Threading.Thread(() =>
                     {
-                        Application.Run(new Form_operationUI());
+                        Application.Run(new Form_operationUI(c));
                     }).Start();
                     this.Close();
                 }
@@ -44,7 +61,7 @@ namespace BookManagementSystemClient
                 }
             }catch(Exception exception)
             {
-                MessageBox.Show("网络异常");
+                MessageBox.Show("网络异常，" + exception.ToString());
             }
         }
 
@@ -54,15 +71,6 @@ namespace BookManagementSystemClient
             {
                 Application.Run(new Form_register());
             }).Start();
-        }
-
-        private void button_systemAdministrator_Click(object sender, EventArgs e)
-        {
-            new System.Threading.Thread(() =>
-            {
-                Application.Run(new SystemAdministratorChildWindow.Form_SystemAdministratorLogin());
-            }).Start();
-            this.Close();
         }
     }
 }

@@ -12,8 +12,11 @@ using System.Web.Script.Serialization;
 
 namespace BookManagementSystemClient
 {
-    class Client
+    public class Client
     {
+        private string token;
+        private string userName;
+
         /// <summary>
         /// 使用http协议向服务器发送用户名和密码
         /// 根据接收到的登录结果返回true（登录成功）或者false（登录失败）
@@ -21,7 +24,7 @@ namespace BookManagementSystemClient
         /// <param name="userName"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public bool Login(string userName, string password)
+        public bool Login(string userName, string password, string userGroup)
         {
             try
             {
@@ -36,6 +39,7 @@ namespace BookManagementSystemClient
                 var dic = new Dictionary<string, string>();
                 dic.Add("id", userName);
                 dic.Add("pw", encryptedPassword);
+                //dic.Add("ug", userGroup);
                 string url = "http://45.77.191.48:7575/login";
                 HttpHandler httpHandler = new HttpHandler();
                 string retStr = httpHandler.HttpPost(url, dic);
@@ -44,9 +48,12 @@ namespace BookManagementSystemClient
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
                 dynamic retStrContent = serializer.Deserialize<dynamic>(retStr);
                 string status = retStrContent["status"];
+                string token = retStrContent["token"];
+                this.token = token;
 
                 if (status == "successful")
                 {
+                    this.userName = userName;
                     return true;
                 }
                 return false;
@@ -98,6 +105,16 @@ namespace BookManagementSystemClient
                 return false;
             }
             
+        }
+
+        public string GetToken()
+        {
+            return this.token;
+        }
+
+        public string GetUserName()
+        {
+            return userName;
         }
     }
 }

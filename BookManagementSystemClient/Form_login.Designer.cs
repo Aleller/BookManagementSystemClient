@@ -34,13 +34,13 @@
             this.label_password = new System.Windows.Forms.Label();
             this.textBox_userName = new System.Windows.Forms.TextBox();
             this.textBox_password = new System.Windows.Forms.TextBox();
-            this.groupBox_reader = new System.Windows.Forms.GroupBox();
-            this.groupBox_reader.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_userGroup = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // button_login
             // 
-            this.button_login.Location = new System.Drawing.Point(124, 133);
+            this.button_login.Location = new System.Drawing.Point(120, 139);
             this.button_login.Name = "button_login";
             this.button_login.Size = new System.Drawing.Size(75, 23);
             this.button_login.TabIndex = 0;
@@ -50,7 +50,7 @@
             // 
             // button_register
             // 
-            this.button_register.Location = new System.Drawing.Point(43, 133);
+            this.button_register.Location = new System.Drawing.Point(39, 139);
             this.button_register.Name = "button_register";
             this.button_register.Size = new System.Drawing.Size(75, 23);
             this.button_register.TabIndex = 1;
@@ -61,7 +61,7 @@
             // label_userName
             // 
             this.label_userName.AutoSize = true;
-            this.label_userName.Location = new System.Drawing.Point(40, 41);
+            this.label_userName.Location = new System.Drawing.Point(36, 33);
             this.label_userName.Name = "label_userName";
             this.label_userName.Size = new System.Drawing.Size(53, 12);
             this.label_userName.TabIndex = 2;
@@ -70,7 +70,7 @@
             // label_password
             // 
             this.label_password.AutoSize = true;
-            this.label_password.Location = new System.Drawing.Point(40, 85);
+            this.label_password.Location = new System.Drawing.Point(36, 77);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(41, 12);
             this.label_password.TabIndex = 3;
@@ -78,7 +78,7 @@
             // 
             // textBox_userName
             // 
-            this.textBox_userName.Location = new System.Drawing.Point(99, 38);
+            this.textBox_userName.Location = new System.Drawing.Point(95, 30);
             this.textBox_userName.Name = "textBox_userName";
             this.textBox_userName.Size = new System.Drawing.Size(100, 21);
             this.textBox_userName.TabIndex = 4;
@@ -86,39 +86,52 @@
             // 
             // textBox_password
             // 
-            this.textBox_password.Location = new System.Drawing.Point(99, 82);
+            this.textBox_password.Location = new System.Drawing.Point(95, 74);
             this.textBox_password.Name = "textBox_password";
             this.textBox_password.PasswordChar = '*';
             this.textBox_password.Size = new System.Drawing.Size(100, 21);
             this.textBox_password.TabIndex = 5;
             this.textBox_password.Text = "123456";
             // 
-            // groupBox_reader
+            // label1
             // 
-            this.groupBox_reader.Controls.Add(this.label_password);
-            this.groupBox_reader.Controls.Add(this.textBox_password);
-            this.groupBox_reader.Controls.Add(this.button_login);
-            this.groupBox_reader.Controls.Add(this.textBox_userName);
-            this.groupBox_reader.Controls.Add(this.button_register);
-            this.groupBox_reader.Controls.Add(this.label_userName);
-            this.groupBox_reader.Location = new System.Drawing.Point(13, 13);
-            this.groupBox_reader.Name = "groupBox_reader";
-            this.groupBox_reader.Size = new System.Drawing.Size(247, 210);
-            this.groupBox_reader.TabIndex = 6;
-            this.groupBox_reader.TabStop = false;
-            this.groupBox_reader.Text = "读者入口";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(37, 111);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(53, 12);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "用户组：";
+            // 
+            // comboBox_userGroup
+            // 
+            this.comboBox_userGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_userGroup.FormattingEnabled = true;
+            this.comboBox_userGroup.Items.AddRange(new object[] {
+            "读者",
+            "图书管理员",
+            "系统管理员"});
+            this.comboBox_userGroup.Location = new System.Drawing.Point(95, 108);
+            this.comboBox_userGroup.Name = "comboBox_userGroup";
+            this.comboBox_userGroup.Size = new System.Drawing.Size(100, 20);
+            this.comboBox_userGroup.TabIndex = 7;
             // 
             // Form_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(272, 235);
-            this.Controls.Add(this.groupBox_reader);
+            this.ClientSize = new System.Drawing.Size(235, 230);
+            this.Controls.Add(this.comboBox_userGroup);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_password);
+            this.Controls.Add(this.textBox_password);
+            this.Controls.Add(this.textBox_userName);
+            this.Controls.Add(this.button_login);
+            this.Controls.Add(this.label_userName);
+            this.Controls.Add(this.button_register);
             this.Name = "Form_login";
             this.Text = "图书管理系统-客户端";
-            this.groupBox_reader.ResumeLayout(false);
-            this.groupBox_reader.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,7 +143,8 @@
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.TextBox textBox_userName;
         private System.Windows.Forms.TextBox textBox_password;
-        private System.Windows.Forms.GroupBox groupBox_reader;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox_userGroup;
     }
 }
 

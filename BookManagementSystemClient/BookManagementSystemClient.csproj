@@ -51,18 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChildWindow\Form_bill.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildWindow\Form_bill.Designer.cs">
-      <DependentUpon>Form_bill.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChildWindow\Form_booksLost.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildWindow\Form_booksLost.Designer.cs">
-      <DependentUpon>Form_booksLost.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChildWindow\Form_borrowHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,23 +63,11 @@
     <Compile Include="ChildWindow\Form_libraryQuery.Designer.cs">
       <DependentUpon>Form_libraryQuery.cs</DependentUpon>
     </Compile>
-    <Compile Include="ChildWindow\Form_myBookshelf.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildWindow\Form_myBookshelf.Designer.cs">
-      <DependentUpon>Form_myBookshelf.cs</DependentUpon>
-    </Compile>
     <Compile Include="ChildWindow\Form_orderInformation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ChildWindow\Form_orderInformation.Designer.cs">
       <DependentUpon>Form_orderInformation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChildWindow\Form_pay.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildWindow\Form_pay.Designer.cs">
-      <DependentUpon>Form_pay.cs</DependentUpon>
     </Compile>
     <Compile Include="ChildWindow\Form_personalInformation.cs">
       <SubType>Form</SubType>
@@ -104,24 +80,6 @@
     </Compile>
     <Compile Include="ChildWindow\Form_queryHistory.Designer.cs">
       <DependentUpon>Form_queryHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChildWindow\Form_reportLoss.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildWindow\Form_reportLoss.Designer.cs">
-      <DependentUpon>Form_reportLoss.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChildWindow\Form_review.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildWindow\Form_review.Designer.cs">
-      <DependentUpon>Form_review.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ChildWindow\Form_simpleQuery.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ChildWindow\Form_simpleQuery.Designer.cs">
-      <DependentUpon>Form_simpleQuery.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Form_login.cs">
@@ -142,51 +100,72 @@
     <Compile Include="Form_register.Designer.cs">
       <DependentUpon>Form_register.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SystemAdministratorChildWindow\Form_SystemAdministratorLogin.cs">
+    <Compile Include="Form_SystemAdministratorUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemAdministratorChildWindow\Form_SystemAdministratorLogin.Designer.cs">
-      <DependentUpon>Form_SystemAdministratorLogin.cs</DependentUpon>
+    <Compile Include="Form_SystemAdministratorUI.Designer.cs">
+      <DependentUpon>Form_SystemAdministratorUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorDeleteReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorDeleteReader.Designer.cs">
+      <DependentUpon>Form_systemAdministratorDeleteReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorRetrieveReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorRetrieveReader.Designer.cs">
+      <DependentUpon>Form_systemAdministratorRetrieveReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorAddReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorAddReader.Designer.cs">
+      <DependentUpon>Form_systemAdministratorAddReader.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorDeleteBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorDeleteBook.Designer.cs">
+      <DependentUpon>Form_systemAdministratorDeleteBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorAddBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorAddBook.Designer.cs">
+      <DependentUpon>Form_systemAdministratorAddBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorUpdateBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorUpdateBook.Designer.cs">
+      <DependentUpon>Form_systemAdministratorUpdateBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorUpdateReader.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorUpdateReader.Designer.cs">
+      <DependentUpon>Form_systemAdministratorUpdateReader.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\Cipher.cs" />
     <Compile Include="Util\HttpHandler.cs" />
-    <EmbeddedResource Include="ChildWindow\Form_bill.resx">
-      <DependentUpon>Form_bill.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChildWindow\Form_booksLost.resx">
-      <DependentUpon>Form_booksLost.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_borrowHistory.resx">
       <DependentUpon>Form_borrowHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_libraryQuery.resx">
       <DependentUpon>Form_libraryQuery.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ChildWindow\Form_myBookshelf.resx">
-      <DependentUpon>Form_myBookshelf.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_orderInformation.resx">
       <DependentUpon>Form_orderInformation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChildWindow\Form_pay.resx">
-      <DependentUpon>Form_pay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_personalInformation.resx">
       <DependentUpon>Form_personalInformation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_queryHistory.resx">
       <DependentUpon>Form_queryHistory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChildWindow\Form_reportLoss.resx">
-      <DependentUpon>Form_reportLoss.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChildWindow\Form_review.resx">
-      <DependentUpon>Form_review.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ChildWindow\Form_simpleQuery.resx">
-      <DependentUpon>Form_simpleQuery.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>
@@ -197,6 +176,9 @@
     <EmbeddedResource Include="Form_register.resx">
       <DependentUpon>Form_register.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_SystemAdministratorUI.resx">
+      <DependentUpon>Form_SystemAdministratorUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -206,8 +188,26 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_SystemAdministratorLogin.resx">
-      <DependentUpon>Form_SystemAdministratorLogin.cs</DependentUpon>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorDeleteReader.resx">
+      <DependentUpon>Form_systemAdministratorDeleteReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorRetrieveReader.resx">
+      <DependentUpon>Form_systemAdministratorRetrieveReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorAddReader.resx">
+      <DependentUpon>Form_systemAdministratorAddReader.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorDeleteBook.resx">
+      <DependentUpon>Form_systemAdministratorDeleteBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorAddBook.resx">
+      <DependentUpon>Form_systemAdministratorAddBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorUpdateBook.resx">
+      <DependentUpon>Form_systemAdministratorUpdateBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorUpdateReader.resx">
+      <DependentUpon>Form_systemAdministratorUpdateReader.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

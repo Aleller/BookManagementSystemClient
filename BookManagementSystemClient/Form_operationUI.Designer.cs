@@ -38,20 +38,12 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.我的图书馆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.我的首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.证件信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.借阅历史ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.预约信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.我的书架ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.书刊遗失ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.读者挂失ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.账目清单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.违章缴款ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.我的书评ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.检索历史ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.预约历史toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.书目检索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.馆藏检索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.简单检索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.多字段检索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.分类浏览ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_borrowedBooks = new System.Windows.Forms.GroupBox();
             this.listView_borrowedBooks = new System.Windows.Forms.ListView();
@@ -152,16 +144,10 @@
             // 
             this.我的图书馆ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.我的首页ToolStripMenuItem,
-            this.证件信息ToolStripMenuItem,
             this.借阅历史ToolStripMenuItem,
             this.预约信息ToolStripMenuItem,
-            this.我的书架ToolStripMenuItem,
-            this.书刊遗失ToolStripMenuItem,
-            this.读者挂失ToolStripMenuItem,
-            this.账目清单ToolStripMenuItem,
-            this.违章缴款ToolStripMenuItem,
-            this.我的书评ToolStripMenuItem,
-            this.检索历史ToolStripMenuItem});
+            this.检索历史ToolStripMenuItem,
+            this.预约历史toolStripMenuItem});
             this.我的图书馆ToolStripMenuItem.Name = "我的图书馆ToolStripMenuItem";
             this.我的图书馆ToolStripMenuItem.Size = new System.Drawing.Size(80, 21);
             this.我的图书馆ToolStripMenuItem.Text = "我的图书馆";
@@ -169,85 +155,40 @@
             // 我的首页ToolStripMenuItem
             // 
             this.我的首页ToolStripMenuItem.Name = "我的首页ToolStripMenuItem";
-            this.我的首页ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.我的首页ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.我的首页ToolStripMenuItem.Text = "我的首页";
-            // 
-            // 证件信息ToolStripMenuItem
-            // 
-            this.证件信息ToolStripMenuItem.Name = "证件信息ToolStripMenuItem";
-            this.证件信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.证件信息ToolStripMenuItem.Text = "证件信息";
-            this.证件信息ToolStripMenuItem.Click += new System.EventHandler(this.证件信息ToolStripMenuItem_Click);
             // 
             // 借阅历史ToolStripMenuItem
             // 
             this.借阅历史ToolStripMenuItem.Name = "借阅历史ToolStripMenuItem";
-            this.借阅历史ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.借阅历史ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.借阅历史ToolStripMenuItem.Text = "借阅历史";
             this.借阅历史ToolStripMenuItem.Click += new System.EventHandler(this.借阅历史ToolStripMenuItem_Click);
             // 
             // 预约信息ToolStripMenuItem
             // 
             this.预约信息ToolStripMenuItem.Name = "预约信息ToolStripMenuItem";
-            this.预约信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.预约信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.预约信息ToolStripMenuItem.Text = "预约信息";
             this.预约信息ToolStripMenuItem.Click += new System.EventHandler(this.预约信息ToolStripMenuItem_Click);
-            // 
-            // 我的书架ToolStripMenuItem
-            // 
-            this.我的书架ToolStripMenuItem.Name = "我的书架ToolStripMenuItem";
-            this.我的书架ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.我的书架ToolStripMenuItem.Text = "我的书架";
-            this.我的书架ToolStripMenuItem.Click += new System.EventHandler(this.我的书架ToolStripMenuItem_Click);
-            // 
-            // 书刊遗失ToolStripMenuItem
-            // 
-            this.书刊遗失ToolStripMenuItem.Name = "书刊遗失ToolStripMenuItem";
-            this.书刊遗失ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.书刊遗失ToolStripMenuItem.Text = "书刊遗失";
-            this.书刊遗失ToolStripMenuItem.Click += new System.EventHandler(this.书刊遗失ToolStripMenuItem_Click);
-            // 
-            // 读者挂失ToolStripMenuItem
-            // 
-            this.读者挂失ToolStripMenuItem.Name = "读者挂失ToolStripMenuItem";
-            this.读者挂失ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.读者挂失ToolStripMenuItem.Text = "读者挂失";
-            this.读者挂失ToolStripMenuItem.Click += new System.EventHandler(this.读者挂失ToolStripMenuItem_Click);
-            // 
-            // 账目清单ToolStripMenuItem
-            // 
-            this.账目清单ToolStripMenuItem.Name = "账目清单ToolStripMenuItem";
-            this.账目清单ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.账目清单ToolStripMenuItem.Text = "账目清单";
-            this.账目清单ToolStripMenuItem.Click += new System.EventHandler(this.账目清单ToolStripMenuItem_Click);
-            // 
-            // 违章缴款ToolStripMenuItem
-            // 
-            this.违章缴款ToolStripMenuItem.Name = "违章缴款ToolStripMenuItem";
-            this.违章缴款ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.违章缴款ToolStripMenuItem.Text = "违章缴款";
-            this.违章缴款ToolStripMenuItem.Click += new System.EventHandler(this.违章缴款ToolStripMenuItem_Click);
-            // 
-            // 我的书评ToolStripMenuItem
-            // 
-            this.我的书评ToolStripMenuItem.Name = "我的书评ToolStripMenuItem";
-            this.我的书评ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.我的书评ToolStripMenuItem.Text = "我的书评";
-            this.我的书评ToolStripMenuItem.Click += new System.EventHandler(this.我的书评ToolStripMenuItem_Click);
             // 
             // 检索历史ToolStripMenuItem
             // 
             this.检索历史ToolStripMenuItem.Name = "检索历史ToolStripMenuItem";
-            this.检索历史ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.检索历史ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.检索历史ToolStripMenuItem.Text = "检索历史";
             this.检索历史ToolStripMenuItem.Click += new System.EventHandler(this.检索历史ToolStripMenuItem_Click);
+            // 
+            // 预约历史toolStripMenuItem
+            // 
+            this.预约历史toolStripMenuItem.Name = "预约历史toolStripMenuItem";
+            this.预约历史toolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.预约历史toolStripMenuItem.Text = "预约历史";
             // 
             // 书目检索ToolStripMenuItem
             // 
             this.书目检索ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.馆藏检索ToolStripMenuItem,
-            this.简单检索ToolStripMenuItem,
-            this.多字段检索ToolStripMenuItem});
+            this.馆藏检索ToolStripMenuItem});
             this.书目检索ToolStripMenuItem.Name = "书目检索ToolStripMenuItem";
             this.书目检索ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.书目检索ToolStripMenuItem.Text = "书目检索";
@@ -258,18 +199,6 @@
             this.馆藏检索ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.馆藏检索ToolStripMenuItem.Text = "馆藏检索";
             this.馆藏检索ToolStripMenuItem.Click += new System.EventHandler(this.馆藏检索ToolStripMenuItem_Click);
-            // 
-            // 简单检索ToolStripMenuItem
-            // 
-            this.简单检索ToolStripMenuItem.Name = "简单检索ToolStripMenuItem";
-            this.简单检索ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.简单检索ToolStripMenuItem.Text = "简单检索";
-            // 
-            // 多字段检索ToolStripMenuItem
-            // 
-            this.多字段检索ToolStripMenuItem.Name = "多字段检索ToolStripMenuItem";
-            this.多字段检索ToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.多字段检索ToolStripMenuItem.Text = "多字段检索";
             // 
             // 分类浏览ToolStripMenuItem
             // 
@@ -385,16 +314,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 我的图书馆ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 我的首页ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 证件信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 借阅历史ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 预约信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 我的书架ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 书刊遗失ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 读者挂失ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 账目清单ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 违章缴款ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 我的书评ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 检索历史ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 书目检索ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 分类浏览ToolStripMenuItem;
         private System.Windows.Forms.Label label_ordered;
@@ -412,9 +333,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader_TN;
         private System.Windows.Forms.Label label_borrowedBookAmount;
         private System.Windows.Forms.ToolStripMenuItem 馆藏检索ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 简单检索ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 多字段检索ToolStripMenuItem;
         private System.Windows.Forms.ColumnHeader columnHeader_number;
         private System.Windows.Forms.ColumnHeader columnHeader_dateOfReturn;
+        private System.Windows.Forms.ToolStripMenuItem 检索历史ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 预约历史toolStripMenuItem;
     }
 }

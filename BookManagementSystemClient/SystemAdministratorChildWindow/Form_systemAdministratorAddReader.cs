@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookManagementSystemClient.SystemAdministratorChildWindow
 {
-    public partial class Form_SystemAdministratorLogin : Form
+    public partial class Form_systemAdministratorAddReader : Form
     {
-        public Form_SystemAdministratorLogin()
+        public Form_systemAdministratorAddReader()
         {
             InitializeComponent();
         }

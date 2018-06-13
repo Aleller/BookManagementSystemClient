@@ -65,7 +65,6 @@ namespace BookManagementSystemClient.Util
             streamReader.Close();
             responseStream.Close();
 
-
             return returnString;
         }
     }

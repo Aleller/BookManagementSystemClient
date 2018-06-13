@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookManagementSystemClient.ChildWindow
+namespace BookManagementSystemClient.SystemAdministratorChildWindow
 {
-    public partial class Form_booksLost : Form
+    public partial class Form_systemAdministratorRetrieveReader : Form
     {
-        public Form_booksLost()
+        public Form_systemAdministratorRetrieveReader()
         {
             InitializeComponent();
         }

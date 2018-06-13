@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookManagementSystemClient.ChildWindow
+namespace BookManagementSystemClient.SystemAdministratorChildWindow
 {
-    public partial class Form_review : Form
+    public partial class Form_systemAdministratorDeleteReader : Form
     {
-        public Form_review()
+        public Form_systemAdministratorDeleteReader()
         {
             InitializeComponent();
         }

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace BookManagementSystemClient.ChildWindow
+namespace BookManagementSystemClient.SystemAdministratorChildWindow
 {
-    public partial class Form_pay : Form
+    public partial class Form_systemAdministratorUpdateBook : Form
     {
-        public Form_pay()
+        public Form_systemAdministratorUpdateBook()
         {
             InitializeComponent();
         }

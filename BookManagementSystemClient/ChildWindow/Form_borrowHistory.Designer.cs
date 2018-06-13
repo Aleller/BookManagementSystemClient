@@ -31,13 +31,14 @@
             this.radioButton_displayAll = new System.Windows.Forms.RadioButton();
             this.radioButton_displayByPage = new System.Windows.Forms.RadioButton();
             this.listView_borrowedBooks = new System.Windows.Forms.ListView();
-            this.columnHeader_number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_TN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_dateOfReturn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_dateOfBorrow = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_position = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_Barcode = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_BorrowDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_ReturnDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_Holding = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader_IsRenewed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.button_reflash = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // radioButton_displayAll
@@ -66,13 +67,13 @@
             // 
             this.listView_borrowedBooks.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView_borrowedBooks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader_number,
-            this.columnHeader_TN,
-            this.columnHeader_title,
-            this.columnHeader_author,
-            this.columnHeader_dateOfBorrow,
-            this.columnHeader_dateOfReturn,
-            this.columnHeader_position});
+            this.columnHeader_Barcode,
+            this.columnHeader_Title,
+            this.columnHeader_Author,
+            this.columnHeader_BorrowDate,
+            this.columnHeader_ReturnDate,
+            this.columnHeader_Holding,
+            this.columnHeader_IsRenewed});
             this.listView_borrowedBooks.HoverSelection = true;
             this.listView_borrowedBooks.Location = new System.Drawing.Point(12, 34);
             this.listView_borrowedBooks.Name = "listView_borrowedBooks";
@@ -81,45 +82,56 @@
             this.listView_borrowedBooks.UseCompatibleStateImageBehavior = false;
             this.listView_borrowedBooks.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeader_number
+            // columnHeader_Barcode
             // 
-            this.columnHeader_number.Text = "序号";
+            this.columnHeader_Barcode.Text = "条形码";
+            this.columnHeader_Barcode.Width = 136;
             // 
-            // columnHeader_title
+            // columnHeader_Title
             // 
-            this.columnHeader_title.Text = "书名";
-            this.columnHeader_title.Width = 118;
+            this.columnHeader_Title.Text = "书名";
+            this.columnHeader_Title.Width = 123;
             // 
-            // columnHeader_author
+            // columnHeader_Author
             // 
-            this.columnHeader_author.Text = "作者简介";
-            this.columnHeader_author.Width = 84;
+            this.columnHeader_Author.Text = "作者";
+            this.columnHeader_Author.Width = 97;
             // 
-            // columnHeader_TN
+            // columnHeader_BorrowDate
             // 
-            this.columnHeader_TN.Text = "TN";
-            this.columnHeader_TN.Width = 89;
+            this.columnHeader_BorrowDate.Text = "借阅日期";
+            this.columnHeader_BorrowDate.Width = 83;
             // 
-            // columnHeader_dateOfReturn
+            // columnHeader_ReturnDate
             // 
-            this.columnHeader_dateOfReturn.Text = "归还日期";
-            this.columnHeader_dateOfReturn.Width = 106;
+            this.columnHeader_ReturnDate.Text = "归还日期";
+            this.columnHeader_ReturnDate.Width = 84;
             // 
-            // columnHeader_dateOfBorrow
+            // columnHeader_Holding
             // 
-            this.columnHeader_dateOfBorrow.Text = "借阅日期";
-            this.columnHeader_dateOfBorrow.Width = 105;
+            this.columnHeader_Holding.Text = "馆藏地";
+            this.columnHeader_Holding.Width = 119;
             // 
-            // columnHeader_position
+            // columnHeader_IsRenewed
             // 
-            this.columnHeader_position.Text = "馆藏地";
-            this.columnHeader_position.Width = 108;
+            this.columnHeader_IsRenewed.Text = "是否续借";
+            // 
+            // button_reflash
+            // 
+            this.button_reflash.Location = new System.Drawing.Point(641, 9);
+            this.button_reflash.Name = "button_reflash";
+            this.button_reflash.Size = new System.Drawing.Size(75, 23);
+            this.button_reflash.TabIndex = 5;
+            this.button_reflash.Text = "刷新";
+            this.button_reflash.UseVisualStyleBackColor = true;
+            this.button_reflash.Click += new System.EventHandler(this.button_reflash_Click);
             // 
             // Form_borrowHistory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(728, 411);
+            this.Controls.Add(this.button_reflash);
             this.Controls.Add(this.listView_borrowedBooks);
             this.Controls.Add(this.radioButton_displayByPage);
             this.Controls.Add(this.radioButton_displayAll);
@@ -135,12 +147,13 @@
         private System.Windows.Forms.RadioButton radioButton_displayAll;
         private System.Windows.Forms.RadioButton radioButton_displayByPage;
         private System.Windows.Forms.ListView listView_borrowedBooks;
-        private System.Windows.Forms.ColumnHeader columnHeader_number;
-        private System.Windows.Forms.ColumnHeader columnHeader_title;
-        private System.Windows.Forms.ColumnHeader columnHeader_author;
-        private System.Windows.Forms.ColumnHeader columnHeader_TN;
-        private System.Windows.Forms.ColumnHeader columnHeader_dateOfReturn;
-        private System.Windows.Forms.ColumnHeader columnHeader_dateOfBorrow;
-        private System.Windows.Forms.ColumnHeader columnHeader_position;
+        private System.Windows.Forms.ColumnHeader columnHeader_Barcode;
+        private System.Windows.Forms.ColumnHeader columnHeader_Title;
+        private System.Windows.Forms.ColumnHeader columnHeader_Author;
+        private System.Windows.Forms.ColumnHeader columnHeader_BorrowDate;
+        private System.Windows.Forms.ColumnHeader columnHeader_ReturnDate;
+        private System.Windows.Forms.ColumnHeader columnHeader_Holding;
+        private System.Windows.Forms.ColumnHeader columnHeader_IsRenewed;
+        private System.Windows.Forms.Button button_reflash;
     }
 }
