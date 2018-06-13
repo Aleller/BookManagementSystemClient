@@ -33,14 +33,7 @@
             this.textBox_inputQuery = new System.Windows.Forms.TextBox();
             this.button_query = new System.Windows.Forms.Button();
             this.listView_borrowedBooks = new System.Windows.Forms.ListView();
-            this.label_currentQuery = new System.Windows.Forms.Label();
-            this.comboBox_sortordProperty = new System.Windows.Forms.ComboBox();
-            this.label_sortord = new System.Windows.Forms.Label();
-            this.comboBox_sortordUpDown = new System.Windows.Forms.ComboBox();
-            this.label_queryInformation = new System.Windows.Forms.Label();
-            this.button_previousPage = new System.Windows.Forms.Button();
-            this.button_nextPage = new System.Windows.Forms.Button();
-            this.button_subQuery = new System.Windows.Forms.Button();
+            this.columnHeader_reserveButton = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_MarcNo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_Author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -50,7 +43,14 @@
             this.columnHeader_Carrier = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_Subject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader_CLS = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_reserveButton = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label_currentQuery = new System.Windows.Forms.Label();
+            this.comboBox_sortordProperty = new System.Windows.Forms.ComboBox();
+            this.label_sortord = new System.Windows.Forms.Label();
+            this.comboBox_sortordUpDown = new System.Windows.Forms.ComboBox();
+            this.label_queryInformation = new System.Windows.Forms.Label();
+            this.button_previousPage = new System.Windows.Forms.Button();
+            this.button_nextPage = new System.Windows.Forms.Button();
+            this.button_subQuery = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox_queryType
@@ -121,6 +121,46 @@
             this.listView_borrowedBooks.UseCompatibleStateImageBehavior = false;
             this.listView_borrowedBooks.View = System.Windows.Forms.View.Details;
             this.listView_borrowedBooks.ItemActivate += new System.EventHandler(this.listView_borrowedBooks_ItemActivate);
+            // 
+            // columnHeader_reserveButton
+            // 
+            this.columnHeader_reserveButton.Text = "";
+            // 
+            // columnHeader_MarcNo
+            // 
+            this.columnHeader_MarcNo.Text = "唯一标识符";
+            // 
+            // columnHeader_Title
+            // 
+            this.columnHeader_Title.Text = "书名";
+            // 
+            // columnHeader_Author
+            // 
+            this.columnHeader_Author.Text = "作者";
+            // 
+            // columnHeader_Publisher
+            // 
+            this.columnHeader_Publisher.Text = "出版社";
+            // 
+            // columnHeader_ISBN
+            // 
+            this.columnHeader_ISBN.Text = "ISBN";
+            // 
+            // columnHeader_Price
+            // 
+            this.columnHeader_Price.Text = "价格";
+            // 
+            // columnHeader_Carrier
+            // 
+            this.columnHeader_Carrier.Text = "馆藏地";
+            // 
+            // columnHeader_Subject
+            // 
+            this.columnHeader_Subject.Text = "科目";
+            // 
+            // columnHeader_CLS
+            // 
+            this.columnHeader_CLS.Text = "中图法分类号";
             // 
             // label_currentQuery
             // 
@@ -204,46 +244,6 @@
             this.button_subQuery.TabIndex = 15;
             this.button_subQuery.Text = "二次查询";
             this.button_subQuery.UseVisualStyleBackColor = true;
-            // 
-            // columnHeader_MarcNo
-            // 
-            this.columnHeader_MarcNo.Text = "唯一标识符";
-            // 
-            // columnHeader_Title
-            // 
-            this.columnHeader_Title.Text = "书名";
-            // 
-            // columnHeader_Author
-            // 
-            this.columnHeader_Author.Text = "作者";
-            // 
-            // columnHeader_Publisher
-            // 
-            this.columnHeader_Publisher.Text = "出版社";
-            // 
-            // columnHeader_ISBN
-            // 
-            this.columnHeader_ISBN.Text = "ISBN";
-            // 
-            // columnHeader_Price
-            // 
-            this.columnHeader_Price.Text = "价格";
-            // 
-            // columnHeader_Carrier
-            // 
-            this.columnHeader_Carrier.Text = "馆藏地";
-            // 
-            // columnHeader_Subject
-            // 
-            this.columnHeader_Subject.Text = "科目";
-            // 
-            // columnHeader_CLS
-            // 
-            this.columnHeader_CLS.Text = "中图法分类号";
-            // 
-            // columnHeader_reserveButton
-            // 
-            this.columnHeader_reserveButton.Text = "";
             // 
             // Form_libraryQuery
             // 

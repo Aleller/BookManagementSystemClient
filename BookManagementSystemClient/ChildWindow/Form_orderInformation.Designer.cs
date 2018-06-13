@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.listView_orderInformation = new System.Windows.Forms.ListView();
-            this.columnHeader_TN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_titleAndAuthor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_position = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_orderDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_expirationDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_takeBookPosition = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_status = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_cancel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label_pleaseInput = new System.Windows.Forms.Label();
             this.textBox_CallNumber = new System.Windows.Forms.TextBox();
             this.button_reserve = new System.Windows.Forms.Button();
@@ -45,59 +46,59 @@
             // listView_orderInformation
             // 
             this.listView_orderInformation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader_TN,
-            this.columnHeader_titleAndAuthor,
-            this.columnHeader_position,
-            this.columnHeader_orderDate,
-            this.columnHeader_expirationDate,
-            this.columnHeader_takeBookPosition,
-            this.columnHeader_status,
-            this.columnHeader_cancel});
-            this.listView_orderInformation.Location = new System.Drawing.Point(13, 85);
+            this.columnHeader9,
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
+            this.listView_orderInformation.Location = new System.Drawing.Point(13, 71);
             this.listView_orderInformation.Name = "listView_orderInformation";
-            this.listView_orderInformation.Size = new System.Drawing.Size(781, 307);
+            this.listView_orderInformation.Size = new System.Drawing.Size(781, 321);
             this.listView_orderInformation.TabIndex = 0;
             this.listView_orderInformation.UseCompatibleStateImageBehavior = false;
             this.listView_orderInformation.View = System.Windows.Forms.View.Details;
+            this.listView_orderInformation.ItemActivate += new System.EventHandler(this.listView_orderInformation_ItemActivate);
             // 
-            // columnHeader_TN
+            // columnHeader9
             // 
-            this.columnHeader_TN.Text = "TN/索书号";
-            this.columnHeader_TN.Width = 88;
+            this.columnHeader9.Text = "取消预约";
             // 
-            // columnHeader_titleAndAuthor
+            // columnHeader1
             // 
-            this.columnHeader_titleAndAuthor.Text = "题名/责任者";
-            this.columnHeader_titleAndAuthor.Width = 128;
+            this.columnHeader1.Text = "索书号";
             // 
-            // columnHeader_position
+            // columnHeader2
             // 
-            this.columnHeader_position.Text = "馆藏地";
-            this.columnHeader_position.Width = 97;
+            this.columnHeader2.Text = "条形码";
             // 
-            // columnHeader_orderDate
+            // columnHeader3
             // 
-            this.columnHeader_orderDate.Text = "预约(到)书日";
-            this.columnHeader_orderDate.Width = 105;
+            this.columnHeader3.Text = "书名";
             // 
-            // columnHeader_expirationDate
+            // columnHeader4
             // 
-            this.columnHeader_expirationDate.Text = "截止日期";
-            this.columnHeader_expirationDate.Width = 89;
+            this.columnHeader4.Text = "作者";
             // 
-            // columnHeader_takeBookPosition
+            // columnHeader5
             // 
-            this.columnHeader_takeBookPosition.Text = "取书地";
-            this.columnHeader_takeBookPosition.Width = 87;
+            this.columnHeader5.Text = "预订日期";
             // 
-            // columnHeader_status
+            // columnHeader6
             // 
-            this.columnHeader_status.Text = "状态";
-            this.columnHeader_status.Width = 113;
+            this.columnHeader6.Text = "预订失效日期";
+            this.columnHeader6.Width = 85;
             // 
-            // columnHeader_cancel
+            // columnHeader7
             // 
-            this.columnHeader_cancel.Text = "取消预约";
+            this.columnHeader7.Text = "馆藏地";
+            // 
+            // columnHeader8
+            // 
+            this.columnHeader8.Text = "状态";
             // 
             // label_pleaseInput
             // 
@@ -144,16 +145,17 @@
         #endregion
 
         private System.Windows.Forms.ListView listView_orderInformation;
-        private System.Windows.Forms.ColumnHeader columnHeader_TN;
-        private System.Windows.Forms.ColumnHeader columnHeader_titleAndAuthor;
-        private System.Windows.Forms.ColumnHeader columnHeader_position;
-        private System.Windows.Forms.ColumnHeader columnHeader_orderDate;
-        private System.Windows.Forms.ColumnHeader columnHeader_expirationDate;
-        private System.Windows.Forms.ColumnHeader columnHeader_takeBookPosition;
-        private System.Windows.Forms.ColumnHeader columnHeader_status;
-        private System.Windows.Forms.ColumnHeader columnHeader_cancel;
         private System.Windows.Forms.Label label_pleaseInput;
         private System.Windows.Forms.TextBox textBox_CallNumber;
         private System.Windows.Forms.Button button_reserve;
+        private System.Windows.Forms.ColumnHeader columnHeader9;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
     }
 }

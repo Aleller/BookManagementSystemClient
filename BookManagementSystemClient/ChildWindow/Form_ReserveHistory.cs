@@ -12,65 +12,54 @@ using System.Windows.Forms;
 
 namespace BookManagementSystemClient.ChildWindow
 {
-    public partial class Form_borrowHistory : Form
+    public partial class Form_ReserveHistory : Form
     {
         private Client client;
 
-        public Form_borrowHistory(Client client)
+        public Form_ReserveHistory(Client client)
         {
             InitializeComponent();
 
             this.client = client;
+
+            this.GetReserveHistory();
         }
 
-        private void GetBorrowHistory()
+        private void GetReserveHistory()
         {
+            string url = "http://45.77.191.48:7575/reserve/history";
+            string id = client.GetUserName();
             string token = client.GetToken();
             token = token.Replace("+", "%2B");
-            string id = client.GetUserName();
 
             HttpHandler httpHandler = new HttpHandler();
-
-            string url = "http://45.77.191.48:7575/borrow/history";
-            string sendString = "token=" + token + "&id=" + id;
+            string sendString = "id=" + id + "&token=" + token;
             string returnString = httpHandler.HttpGet(url, sendString);
-            Console.WriteLine(returnString);
 
             JavaScriptSerializer js = new JavaScriptSerializer();
             dynamic returnStringContent = js.Deserialize<dynamic>(returnString);
             string status = returnStringContent["status"];
-            object[] record = returnStringContent["record"];
 
-            //请求数据完成，显示数据
             if(status == "successful")
             {
+                object[] record = returnStringContent["record"];
+
                 for (int i = 0; i < record.Length; i++)
                 {
                     dynamic dic = record[i] as Dictionary<string, object>;
                     ListViewItem item = new ListViewItem();
-                    item.Text = dic["barcode"];
+                    item.Text = dic["callNumber"];
+                    item.SubItems.Add(dic["barcode"]);
                     item.SubItems.Add(dic["title"]);
                     item.SubItems.Add(dic["author"]);
-                    item.SubItems.Add(dic["borrowDate"]);
-                    item.SubItems.Add(dic["returnDate"]);
+                    item.SubItems.Add(dic["reserveDate"]);
+                    item.SubItems.Add(dic["expiration"]);
                     item.SubItems.Add(dic["holding"]);
-                    if (dic["isRenewed"])
-                    {
-                        item.SubItems.Add("是");
-                    }
-                    else
-                    {
-                        item.SubItems.Add("否");
-                    }
+                    item.SubItems.Add(dic["status"]);
 
-                    listView_borrowedBooks.Items.Add(item);
+                    listView_borrowHistory.Items.Add(item);
                 }
             }
-        }
-
-        private void button_reflash_Click(object sender, EventArgs e)
-        {
-            this.GetBorrowHistory();
         }
     }
 }

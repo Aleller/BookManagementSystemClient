@@ -31,7 +31,6 @@
             this.label_userName = new System.Windows.Forms.Label();
             this.groupBox_myHomePage = new System.Windows.Forms.GroupBox();
             this.label_ordered = new System.Windows.Forms.Label();
-            this.label_overdue = new System.Windows.Forms.Label();
             this.label_maxOrder = new System.Windows.Forms.Label();
             this.label_maxBorrow = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -39,7 +38,7 @@
             this.我的图书馆ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.我的首页ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.借阅历史ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.预约信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.当前预约ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.检索历史ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.预约历史toolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.书目检索ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,16 +46,15 @@
             this.分类浏览ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox_borrowedBooks = new System.Windows.Forms.GroupBox();
             this.listView_borrowedBooks = new System.Windows.Forms.ListView();
-            this.columnHeader_number = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_author = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_publisher = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_ISBN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_subject = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_TN = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader_dateOfReturn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label_borrowedBookAmount = new System.Windows.Forms.Label();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox_myHomePage.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox_borrowedBooks.SuspendLayout();
@@ -74,7 +72,7 @@
             // groupBox_myHomePage
             // 
             this.groupBox_myHomePage.Controls.Add(this.label_ordered);
-            this.groupBox_myHomePage.Controls.Add(this.label_overdue);
+            this.groupBox_myHomePage.Controls.Add(this.label_borrowedBookAmount);
             this.groupBox_myHomePage.Controls.Add(this.label_maxOrder);
             this.groupBox_myHomePage.Controls.Add(this.label_maxBorrow);
             this.groupBox_myHomePage.Controls.Add(this.label_userName);
@@ -93,16 +91,6 @@
             this.label_ordered.Size = new System.Drawing.Size(71, 12);
             this.label_ordered.TabIndex = 4;
             this.label_ordered.Text = "预约到书：0";
-            // 
-            // label_overdue
-            // 
-            this.label_overdue.AutoSize = true;
-            this.label_overdue.ForeColor = System.Drawing.Color.Red;
-            this.label_overdue.Location = new System.Drawing.Point(344, 29);
-            this.label_overdue.Name = "label_overdue";
-            this.label_overdue.Size = new System.Drawing.Size(71, 12);
-            this.label_overdue.TabIndex = 3;
-            this.label_overdue.Text = "超期图书：0";
             // 
             // label_maxOrder
             // 
@@ -145,7 +133,7 @@
             this.我的图书馆ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.我的首页ToolStripMenuItem,
             this.借阅历史ToolStripMenuItem,
-            this.预约信息ToolStripMenuItem,
+            this.当前预约ToolStripMenuItem,
             this.检索历史ToolStripMenuItem,
             this.预约历史toolStripMenuItem});
             this.我的图书馆ToolStripMenuItem.Name = "我的图书馆ToolStripMenuItem";
@@ -165,12 +153,12 @@
             this.借阅历史ToolStripMenuItem.Text = "借阅历史";
             this.借阅历史ToolStripMenuItem.Click += new System.EventHandler(this.借阅历史ToolStripMenuItem_Click);
             // 
-            // 预约信息ToolStripMenuItem
+            // 当前预约ToolStripMenuItem
             // 
-            this.预约信息ToolStripMenuItem.Name = "预约信息ToolStripMenuItem";
-            this.预约信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.预约信息ToolStripMenuItem.Text = "预约信息";
-            this.预约信息ToolStripMenuItem.Click += new System.EventHandler(this.预约信息ToolStripMenuItem_Click);
+            this.当前预约ToolStripMenuItem.Name = "当前预约ToolStripMenuItem";
+            this.当前预约ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.当前预约ToolStripMenuItem.Text = "当前预约";
+            this.当前预约ToolStripMenuItem.Click += new System.EventHandler(this.预约信息ToolStripMenuItem_Click);
             // 
             // 检索历史ToolStripMenuItem
             // 
@@ -184,6 +172,7 @@
             this.预约历史toolStripMenuItem.Name = "预约历史toolStripMenuItem";
             this.预约历史toolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.预约历史toolStripMenuItem.Text = "预约历史";
+            this.预约历史toolStripMenuItem.Click += new System.EventHandler(this.预约历史toolStripMenuItem_Click);
             // 
             // 书目检索ToolStripMenuItem
             // 
@@ -196,7 +185,7 @@
             // 馆藏检索ToolStripMenuItem
             // 
             this.馆藏检索ToolStripMenuItem.Name = "馆藏检索ToolStripMenuItem";
-            this.馆藏检索ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.馆藏检索ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.馆藏检索ToolStripMenuItem.Text = "馆藏检索";
             this.馆藏检索ToolStripMenuItem.Click += new System.EventHandler(this.馆藏检索ToolStripMenuItem_Click);
             // 
@@ -209,7 +198,6 @@
             // groupBox_borrowedBooks
             // 
             this.groupBox_borrowedBooks.Controls.Add(this.listView_borrowedBooks);
-            this.groupBox_borrowedBooks.Controls.Add(this.label_borrowedBookAmount);
             this.groupBox_borrowedBooks.Location = new System.Drawing.Point(12, 110);
             this.groupBox_borrowedBooks.Name = "groupBox_borrowedBooks";
             this.groupBox_borrowedBooks.Size = new System.Drawing.Size(771, 329);
@@ -221,68 +209,63 @@
             // 
             this.listView_borrowedBooks.Activation = System.Windows.Forms.ItemActivation.OneClick;
             this.listView_borrowedBooks.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader_number,
-            this.columnHeader_title,
-            this.columnHeader_author,
-            this.columnHeader_publisher,
-            this.columnHeader_ISBN,
-            this.columnHeader_price,
-            this.columnHeader_subject,
-            this.columnHeader_TN,
-            this.columnHeader_dateOfReturn});
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6,
+            this.columnHeader7,
+            this.columnHeader8});
             this.listView_borrowedBooks.HoverSelection = true;
-            this.listView_borrowedBooks.Location = new System.Drawing.Point(13, 48);
+            this.listView_borrowedBooks.Location = new System.Drawing.Point(13, 20);
             this.listView_borrowedBooks.Name = "listView_borrowedBooks";
-            this.listView_borrowedBooks.Size = new System.Drawing.Size(752, 256);
+            this.listView_borrowedBooks.Size = new System.Drawing.Size(752, 284);
             this.listView_borrowedBooks.TabIndex = 1;
             this.listView_borrowedBooks.UseCompatibleStateImageBehavior = false;
             this.listView_borrowedBooks.View = System.Windows.Forms.View.Details;
+            this.listView_borrowedBooks.ItemActivate += new System.EventHandler(this.listView_borrowedBooks_ItemActivate);
             // 
-            // columnHeader_number
+            // columnHeader2
             // 
-            this.columnHeader_number.Text = "序号";
+            this.columnHeader2.Text = "条形码";
             // 
-            // columnHeader_title
+            // columnHeader3
             // 
-            this.columnHeader_title.Text = "书名";
+            this.columnHeader3.Text = "书名";
             // 
-            // columnHeader_author
+            // columnHeader4
             // 
-            this.columnHeader_author.Text = "责任人";
+            this.columnHeader4.Text = "作者";
             // 
-            // columnHeader_publisher
+            // columnHeader5
             // 
-            this.columnHeader_publisher.Text = "发行商";
+            this.columnHeader5.Text = "借阅日期";
             // 
-            // columnHeader_ISBN
+            // columnHeader6
             // 
-            this.columnHeader_ISBN.Text = "ISBN";
+            this.columnHeader6.Text = "应还日期";
             // 
-            // columnHeader_price
+            // columnHeader7
             // 
-            this.columnHeader_price.Text = "定价";
+            this.columnHeader7.Text = "馆藏地";
             // 
-            // columnHeader_subject
+            // columnHeader8
             // 
-            this.columnHeader_subject.Text = "学科主题";
-            // 
-            // columnHeader_TN
-            // 
-            this.columnHeader_TN.Text = "中图法分类号";
-            this.columnHeader_TN.Width = 89;
-            // 
-            // columnHeader_dateOfReturn
-            // 
-            this.columnHeader_dateOfReturn.Text = "归还日期";
+            this.columnHeader8.Text = "是否续借";
             // 
             // label_borrowedBookAmount
             // 
             this.label_borrowedBookAmount.AutoSize = true;
-            this.label_borrowedBookAmount.Location = new System.Drawing.Point(11, 21);
+            this.label_borrowedBookAmount.Location = new System.Drawing.Point(344, 29);
             this.label_borrowedBookAmount.Name = "label_borrowedBookAmount";
             this.label_borrowedBookAmount.Size = new System.Drawing.Size(71, 12);
             this.label_borrowedBookAmount.TabIndex = 0;
             this.label_borrowedBookAmount.Text = "已借数量：0";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "续借";
             // 
             // Form_operationUI
             // 
@@ -300,7 +283,6 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox_borrowedBooks.ResumeLayout(false);
-            this.groupBox_borrowedBooks.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,27 +297,25 @@
         private System.Windows.Forms.ToolStripMenuItem 我的图书馆ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 我的首页ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 借阅历史ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 预约信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 当前预约ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 书目检索ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 分类浏览ToolStripMenuItem;
         private System.Windows.Forms.Label label_ordered;
-        private System.Windows.Forms.Label label_overdue;
         private System.Windows.Forms.Label label_maxOrder;
         private System.Windows.Forms.Label label_maxBorrow;
         private System.Windows.Forms.GroupBox groupBox_borrowedBooks;
         private System.Windows.Forms.ListView listView_borrowedBooks;
-        private System.Windows.Forms.ColumnHeader columnHeader_title;
-        private System.Windows.Forms.ColumnHeader columnHeader_publisher;
-        private System.Windows.Forms.ColumnHeader columnHeader_ISBN;
-        private System.Windows.Forms.ColumnHeader columnHeader_price;
-        private System.Windows.Forms.ColumnHeader columnHeader_author;
-        private System.Windows.Forms.ColumnHeader columnHeader_subject;
-        private System.Windows.Forms.ColumnHeader columnHeader_TN;
         private System.Windows.Forms.Label label_borrowedBookAmount;
         private System.Windows.Forms.ToolStripMenuItem 馆藏检索ToolStripMenuItem;
-        private System.Windows.Forms.ColumnHeader columnHeader_number;
-        private System.Windows.Forms.ColumnHeader columnHeader_dateOfReturn;
         private System.Windows.Forms.ToolStripMenuItem 检索历史ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 预约历史toolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

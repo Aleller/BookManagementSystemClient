@@ -81,6 +81,12 @@
     <Compile Include="ChildWindow\Form_queryHistory.Designer.cs">
       <DependentUpon>Form_queryHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChildWindow\Form_ReserveHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChildWindow\Form_ReserveHistory.Designer.cs">
+      <DependentUpon>Form_ReserveHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Form_login.cs">
       <SubType>Form</SubType>
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ChildWindow\Form_queryHistory.resx">
       <DependentUpon>Form_queryHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChildWindow\Form_ReserveHistory.resx">
+      <DependentUpon>Form_ReserveHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_login.resx">
       <DependentUpon>Form_login.cs</DependentUpon>
