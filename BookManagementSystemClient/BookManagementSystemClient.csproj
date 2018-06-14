@@ -144,6 +144,12 @@
     <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorUpdateBook.Designer.cs">
       <DependentUpon>Form_systemAdministratorUpdateBook.cs</DependentUpon>
     </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdminitratorUpdateCollection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdminitratorUpdateCollection.Designer.cs">
+      <DependentUpon>Form_systemAdminitratorUpdateCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\Cipher.cs" />
     <Compile Include="Util\HttpHandler.cs" />
     <EmbeddedResource Include="ChildWindow\Form_borrowHistory.resx">
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorUpdateBook.resx">
       <DependentUpon>Form_systemAdministratorUpdateBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdminitratorUpdateCollection.resx">
+      <DependentUpon>Form_systemAdminitratorUpdateCollection.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

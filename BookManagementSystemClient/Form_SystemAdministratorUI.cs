@@ -180,9 +180,57 @@ namespace BookManagementSystemClient
             }
         }
 
-        private void button_retrieveBook_Click(object sender, EventArgs e)
+        private void button_confirmLend_Click(object sender, EventArgs e)
         {
+            bool successful = this.Lend();
+            if (successful)
+            {
+                MessageBox.Show("借出成功");
+            }else
+            {
+                MessageBox.Show("借出失败");
+            }
+        }
 
+        private bool Lend()
+        {
+            string studendID = textBox_studentID.Text.Trim();
+            string barcode = textBox_barcode.Text.Trim();
+            string marcNo = textBox_marcNo.Text.Trim();
+
+            string url = "http://45.77.191.48:7575/admin/borrow";
+            Dictionary<string, string> dic = new Dictionary<string, string>();
+            dic.Add("studentID", studendID);
+            dic.Add("barcode", barcode);
+            dic.Add("marcNo", marcNo);
+
+            HttpHandler httpHandler = new HttpHandler();
+            string returnString = httpHandler.HttpPost(url, dic);
+
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            dynamic content = js.Deserialize<dynamic>(returnString);
+
+            string status = content["status"];
+            if(status == "successful")
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
+
+        private void button_updateCollection_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SystemAdministratorChildWindow.Form_systemAdminitratorUpdateCollection child = new SystemAdministratorChildWindow.Form_systemAdminitratorUpdateCollection();
+                child.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
