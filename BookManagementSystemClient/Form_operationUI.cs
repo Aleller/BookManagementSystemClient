@@ -25,6 +25,23 @@ namespace BookManagementSystemClient
             this.GetBorrowInformation();
 
             this.GetInfo();
+
+            this.GetAnnouncement();
+        }
+
+        private void GetAnnouncement()
+        {
+            HttpHandler httpHandler = new HttpHandler();
+
+            string url = "http://45.77.191.48:7575/broadcast/get";
+            string returnString = httpHandler.HttpGet(url, "");
+
+            JavaScriptSerializer serializer = new JavaScriptSerializer();
+            dynamic returnStringContent = serializer.Deserialize<dynamic>(returnString);
+
+            string message = returnStringContent["msg"];
+
+            MessageBox.Show("通知：\n" + message);
         }
 
         private void 借阅历史ToolStripMenuItem_Click(object sender, EventArgs e)
