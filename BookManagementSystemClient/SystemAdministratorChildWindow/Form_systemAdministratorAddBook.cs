@@ -88,7 +88,7 @@ namespace BookManagementSystemClient.SystemAdministratorChildWindow
         {
             try
             {
-                SystemAdministratorChildWindow.Form_systemAdministratorAddHolding child = new SystemAdministratorChildWindow.Form_systemAdministratorAddHolding();
+                SystemAdministratorChildWindow.Form_systemAdministratorAddCollection child = new SystemAdministratorChildWindow.Form_systemAdministratorAddCollection();
                 child.ShowDialog();
             }
             catch (Exception ex)

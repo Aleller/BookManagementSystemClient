@@ -120,11 +120,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorAddHolding.cs">
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorAddCollection.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorAddHolding.Designer.cs">
-      <DependentUpon>Form_systemAdministratorAddHolding.cs</DependentUpon>
+    <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorAddCollection.Designer.cs">
+      <DependentUpon>Form_systemAdministratorAddCollection.cs</DependentUpon>
     </Compile>
     <Compile Include="SystemAdministratorChildWindow\Form_systemAdministratorDeleteBook.cs">
       <SubType>Form</SubType>
@@ -188,8 +188,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorAddHolding.resx">
-      <DependentUpon>Form_systemAdministratorAddHolding.cs</DependentUpon>
+    <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorAddCollection.resx">
+      <DependentUpon>Form_systemAdministratorAddCollection.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemAdministratorChildWindow\Form_systemAdministratorDeleteBook.resx">
       <DependentUpon>Form_systemAdministratorDeleteBook.cs</DependentUpon>
