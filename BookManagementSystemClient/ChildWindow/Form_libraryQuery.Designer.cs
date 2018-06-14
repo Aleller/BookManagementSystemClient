@@ -129,14 +129,17 @@
             // columnHeader_MarcNo
             // 
             this.columnHeader_MarcNo.Text = "唯一标识符";
+            this.columnHeader_MarcNo.Width = 102;
             // 
             // columnHeader_Title
             // 
             this.columnHeader_Title.Text = "书名";
+            this.columnHeader_Title.Width = 162;
             // 
             // columnHeader_Author
             // 
             this.columnHeader_Author.Text = "作者";
+            this.columnHeader_Author.Width = 75;
             // 
             // columnHeader_Publisher
             // 
@@ -161,6 +164,7 @@
             // columnHeader_CLS
             // 
             this.columnHeader_CLS.Text = "中图法分类号";
+            this.columnHeader_CLS.Width = 84;
             // 
             // label_currentQuery
             // 

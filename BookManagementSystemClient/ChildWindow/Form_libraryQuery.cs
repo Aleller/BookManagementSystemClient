@@ -130,6 +130,27 @@ namespace BookManagementSystemClient.ChildWindow
 
             HttpHandler httpHandler = new HttpHandler();
             string returnString = httpHandler.HttpGet(url, "");
+
+            JavaScriptSerializer js = new JavaScriptSerializer();
+            dynamic returnStringContent = js.Deserialize<dynamic>(returnString);
+            string status = returnStringContent["status"];
+            
+            if(status == "successful")
+            {
+                try
+                {
+                    ChildWindow.Form_reserveBooks child = new ChildWindow.Form_reserveBooks(this.client, returnString);
+                    child.ShowDialog();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            else
+            {
+                MessageBox.Show("获取馆藏信息失败");
+            }
         }
     }
 }
