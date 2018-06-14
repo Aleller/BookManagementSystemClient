@@ -32,28 +32,37 @@ namespace BookManagementSystemClient
                 switch (userGroup_int)
                 {
                     case 0:
-                        userGroup = "Reader";
+                        userGroup = "reader";
                         break;
                     case 1:
-                        userGroup = "BookAdministrator";
-                        break;
-                    case 2:
-                        userGroup = "SystemAdministrator";
+                        userGroup = "admin";
                         break;
                     default:
                         userGroup = "error";
                         break;
                 }
 
-                bool success = c.Login(userName, password, userGroup);
+                Dictionary<string, string> result = c.Login(userName, password, userGroup);
 
-                if (success)
+                if (result["status"] == "successful")
                 {
-                    new System.Threading.Thread(() =>
+                    switch (result["userGroup"])
                     {
-                        Application.Run(new Form_operationUI(c));
-                    }).Start();
-                    this.Close();
+                        case "reader":
+                            new System.Threading.Thread(() =>
+                            {
+                                Application.Run(new Form_operationUI(c));
+                            }).Start();
+                            this.Close();
+                            break;
+                        case "admin":
+                            new System.Threading.Thread(() =>
+                            {
+                                Application.Run(new Form_SystemAdministratorUI(c));
+                            }).Start();
+                            this.Close();
+                            break;
+                    }
                 }
                 else
                 {

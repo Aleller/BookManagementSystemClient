@@ -15,6 +15,8 @@ namespace BookManagementSystemClient
         public Form_register()
         {
             InitializeComponent();
+
+            this.comboBox_userGroup.SelectedIndex = 0;
         }
 
         private void button_register_Click(object sender, EventArgs e)
@@ -48,7 +50,19 @@ namespace BookManagementSystemClient
             //都没有问题了
             Client client = new Client();
             bool success = false;
-            success = client.Register(textBox_inputUserName.Text.Trim(), textBox_inputPassword1.Text.Trim());
+            string userGroup = "";
+            string key = textBox_key.Text.Trim();
+
+            switch (comboBox_userGroup.SelectedIndex)
+            {
+                case 0:
+                    userGroup = "reader";
+                    break;
+                case 1:
+                    userGroup = "admin";
+                    break;
+            }
+            success = client.Register(textBox_inputUserName.Text.Trim(), textBox_inputPassword1.Text.Trim(), userGroup, key);
             if (success)
             {
                 MessageBox.Show("注册成功");
@@ -56,6 +70,19 @@ namespace BookManagementSystemClient
             else
             {
                 MessageBox.Show("注册失败");
+            }
+        }
+
+        private void comboBox_userGroup_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_userGroup.SelectedIndex == 1)
+            {
+                textBox_key.ReadOnly = false;
+            }
+            if (comboBox_userGroup.SelectedIndex == 0)
+            {
+                textBox_key.Text = "";
+                textBox_key.ReadOnly = true;
             }
         }
     }

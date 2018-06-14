@@ -24,7 +24,7 @@ namespace BookManagementSystemClient
         /// <param name="userName"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        public bool Login(string userName, string password, string userGroup)
+        public Dictionary<string,string> Login(string userName, string password, string userGroup)
         {
             try
             {
@@ -39,7 +39,7 @@ namespace BookManagementSystemClient
                 var dic = new Dictionary<string, string>();
                 dic.Add("id", userName);
                 dic.Add("pw", encryptedPassword);
-                //dic.Add("ug", userGroup);
+                dic.Add("ug", userGroup);
                 string url = "http://45.77.191.48:7575/login";
                 HttpHandler httpHandler = new HttpHandler();
                 string retStr = httpHandler.HttpPost(url, dic);
@@ -49,35 +49,31 @@ namespace BookManagementSystemClient
                 dynamic retStrContent = serializer.Deserialize<dynamic>(retStr);
                 string status = retStrContent["status"];
                 string token = retStrContent["token"];
-                this.token = token;
 
+                
                 if (status == "successful")
                 {
                     this.userName = userName;
-                    return true;
+                    this.token = token;
                 }
-                return false;
-            }catch(Exception e)
+
+                Dictionary<string, string> returnDictionary = new Dictionary<string, string>();
+                returnDictionary.Add("status", status);
+                returnDictionary.Add("userGroup", userGroup);
+
+                return returnDictionary;
+            }
+            catch(Exception e)
             {
                 Console.WriteLine(e.ToString());
                 throw e;
             }
         }
 
-        public bool Register(string userName, string password)
+        public bool Register(string userName, string password, string userGroup, string key)
         {
             //对发送的密码进行加密
             string encryptedPassword = Cipher.AutoEncrypt(password);
-
-            /*
-            string base64UserName;
-            string base64EncryptedPassword;
-
-            byte[] buffer = Convert.FromBase64String(userName);
-            base64UserName = Convert.ToBase64String(buffer).Replace("+","%2B");
-            buffer = Convert.FromBase64String(encryptedPassword);
-            base64EncryptedPassword = Convert.ToBase64String(buffer).Replace("+", "%2B");
-            */
 
             //加号在经过传递后会变成空格，所以这里先转了
             userName = userName.Replace("+", "%2B");
@@ -87,7 +83,18 @@ namespace BookManagementSystemClient
             var dic = new Dictionary<string, string>();
             dic.Add("id", userName);
             dic.Add("pw", encryptedPassword);
-            string url = "http://45.77.191.48:7575/register";
+            dic.Add("ug", userGroup);
+            dic.Add("key", key);
+            string url = "";
+            switch (userGroup)
+            {
+                case "reader":
+                    url = "http://45.77.191.48:7575/register";
+                    break;
+                case "admin":
+                    url = "http://45.77.191.48:7575/admin/register";
+                    break;
+            }
             HttpHandler httpHandler = new HttpHandler();
             string retStr = httpHandler.HttpPost(url, dic);
             /*考虑一下需不需要封装“发送并接收”的操作*/

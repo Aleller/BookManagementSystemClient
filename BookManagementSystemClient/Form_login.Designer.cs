@@ -108,7 +108,6 @@
             this.comboBox_userGroup.FormattingEnabled = true;
             this.comboBox_userGroup.Items.AddRange(new object[] {
             "读者",
-            "图书管理员",
             "系统管理员"});
             this.comboBox_userGroup.Location = new System.Drawing.Point(95, 108);
             this.comboBox_userGroup.Name = "comboBox_userGroup";
