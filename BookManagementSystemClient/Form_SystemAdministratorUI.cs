@@ -179,5 +179,10 @@ namespace BookManagementSystemClient
                 return false;
             }
         }
+
+        private void button_retrieveBook_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

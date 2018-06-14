@@ -35,16 +35,16 @@
             this.button_deleteBook = new System.Windows.Forms.Button();
             this.button_addBook = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.label_oldKey = new System.Windows.Forms.Label();
-            this.label_newKey1 = new System.Windows.Forms.Label();
-            this.label_newKey2 = new System.Windows.Forms.Label();
-            this.textBox_oldKey = new System.Windows.Forms.TextBox();
-            this.textBox_newKey1 = new System.Windows.Forms.TextBox();
-            this.textBox_newKey2 = new System.Windows.Forms.TextBox();
-            this.button_confirm = new System.Windows.Forms.Button();
-            this.textBox_announcement = new System.Windows.Forms.TextBox();
             this.button_release = new System.Windows.Forms.Button();
+            this.textBox_announcement = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button_confirm = new System.Windows.Forms.Button();
+            this.textBox_newKey2 = new System.Windows.Forms.TextBox();
+            this.textBox_newKey1 = new System.Windows.Forms.TextBox();
+            this.textBox_oldKey = new System.Windows.Forms.TextBox();
+            this.label_newKey2 = new System.Windows.Forms.Label();
+            this.label_newKey1 = new System.Windows.Forms.Label();
+            this.label_oldKey = new System.Windows.Forms.Label();
             this.tabControl_systemAdministratorUI.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -94,6 +94,7 @@
             this.button_retrieveBook.TabIndex = 2;
             this.button_retrieveBook.Text = "查询图书";
             this.button_retrieveBook.UseVisualStyleBackColor = true;
+            this.button_retrieveBook.Click += new System.EventHandler(this.button_retrieveBook_Click);
             // 
             // button_deleteBook
             // 
@@ -126,6 +127,24 @@
             this.tabPage2.Text = "发布公告";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button_release
+            // 
+            this.button_release.Location = new System.Drawing.Point(548, 315);
+            this.button_release.Name = "button_release";
+            this.button_release.Size = new System.Drawing.Size(75, 23);
+            this.button_release.TabIndex = 1;
+            this.button_release.Text = "发布";
+            this.button_release.UseVisualStyleBackColor = true;
+            this.button_release.Click += new System.EventHandler(this.button_release_Click);
+            // 
+            // textBox_announcement
+            // 
+            this.textBox_announcement.Location = new System.Drawing.Point(50, 32);
+            this.textBox_announcement.Multiline = true;
+            this.textBox_announcement.Name = "textBox_announcement";
+            this.textBox_announcement.Size = new System.Drawing.Size(573, 254);
+            this.textBox_announcement.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.button_confirm);
@@ -143,54 +162,6 @@
             this.tabPage3.Text = "修改管理员验证码";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // label_oldKey
-            // 
-            this.label_oldKey.AutoSize = true;
-            this.label_oldKey.Location = new System.Drawing.Point(145, 35);
-            this.label_oldKey.Name = "label_oldKey";
-            this.label_oldKey.Size = new System.Drawing.Size(89, 12);
-            this.label_oldKey.TabIndex = 0;
-            this.label_oldKey.Text = "输入原验证码：";
-            // 
-            // label_newKey1
-            // 
-            this.label_newKey1.AutoSize = true;
-            this.label_newKey1.Location = new System.Drawing.Point(145, 62);
-            this.label_newKey1.Name = "label_newKey1";
-            this.label_newKey1.Size = new System.Drawing.Size(89, 12);
-            this.label_newKey1.TabIndex = 1;
-            this.label_newKey1.Text = "输入新验证码：";
-            // 
-            // label_newKey2
-            // 
-            this.label_newKey2.AutoSize = true;
-            this.label_newKey2.Location = new System.Drawing.Point(145, 89);
-            this.label_newKey2.Name = "label_newKey2";
-            this.label_newKey2.Size = new System.Drawing.Size(89, 12);
-            this.label_newKey2.TabIndex = 2;
-            this.label_newKey2.Text = "重复新验证码：";
-            // 
-            // textBox_oldKey
-            // 
-            this.textBox_oldKey.Location = new System.Drawing.Point(241, 32);
-            this.textBox_oldKey.Name = "textBox_oldKey";
-            this.textBox_oldKey.Size = new System.Drawing.Size(292, 21);
-            this.textBox_oldKey.TabIndex = 3;
-            // 
-            // textBox_newKey1
-            // 
-            this.textBox_newKey1.Location = new System.Drawing.Point(241, 59);
-            this.textBox_newKey1.Name = "textBox_newKey1";
-            this.textBox_newKey1.Size = new System.Drawing.Size(292, 21);
-            this.textBox_newKey1.TabIndex = 4;
-            // 
-            // textBox_newKey2
-            // 
-            this.textBox_newKey2.Location = new System.Drawing.Point(241, 86);
-            this.textBox_newKey2.Name = "textBox_newKey2";
-            this.textBox_newKey2.Size = new System.Drawing.Size(292, 21);
-            this.textBox_newKey2.TabIndex = 5;
-            // 
             // button_confirm
             // 
             this.button_confirm.Location = new System.Drawing.Point(458, 129);
@@ -201,23 +172,53 @@
             this.button_confirm.UseVisualStyleBackColor = true;
             this.button_confirm.Click += new System.EventHandler(this.button_confirm_Click);
             // 
-            // textBox_announcement
+            // textBox_newKey2
             // 
-            this.textBox_announcement.Location = new System.Drawing.Point(50, 32);
-            this.textBox_announcement.Multiline = true;
-            this.textBox_announcement.Name = "textBox_announcement";
-            this.textBox_announcement.Size = new System.Drawing.Size(573, 254);
-            this.textBox_announcement.TabIndex = 0;
+            this.textBox_newKey2.Location = new System.Drawing.Point(241, 86);
+            this.textBox_newKey2.Name = "textBox_newKey2";
+            this.textBox_newKey2.Size = new System.Drawing.Size(292, 21);
+            this.textBox_newKey2.TabIndex = 5;
             // 
-            // button_release
+            // textBox_newKey1
             // 
-            this.button_release.Location = new System.Drawing.Point(548, 315);
-            this.button_release.Name = "button_release";
-            this.button_release.Size = new System.Drawing.Size(75, 23);
-            this.button_release.TabIndex = 1;
-            this.button_release.Text = "发布";
-            this.button_release.UseVisualStyleBackColor = true;
-            this.button_release.Click += new System.EventHandler(this.button_release_Click);
+            this.textBox_newKey1.Location = new System.Drawing.Point(241, 59);
+            this.textBox_newKey1.Name = "textBox_newKey1";
+            this.textBox_newKey1.Size = new System.Drawing.Size(292, 21);
+            this.textBox_newKey1.TabIndex = 4;
+            // 
+            // textBox_oldKey
+            // 
+            this.textBox_oldKey.Location = new System.Drawing.Point(241, 32);
+            this.textBox_oldKey.Name = "textBox_oldKey";
+            this.textBox_oldKey.Size = new System.Drawing.Size(292, 21);
+            this.textBox_oldKey.TabIndex = 3;
+            // 
+            // label_newKey2
+            // 
+            this.label_newKey2.AutoSize = true;
+            this.label_newKey2.Location = new System.Drawing.Point(145, 89);
+            this.label_newKey2.Name = "label_newKey2";
+            this.label_newKey2.Size = new System.Drawing.Size(89, 12);
+            this.label_newKey2.TabIndex = 2;
+            this.label_newKey2.Text = "重复新验证码：";
+            // 
+            // label_newKey1
+            // 
+            this.label_newKey1.AutoSize = true;
+            this.label_newKey1.Location = new System.Drawing.Point(145, 62);
+            this.label_newKey1.Name = "label_newKey1";
+            this.label_newKey1.Size = new System.Drawing.Size(89, 12);
+            this.label_newKey1.TabIndex = 1;
+            this.label_newKey1.Text = "输入新验证码：";
+            // 
+            // label_oldKey
+            // 
+            this.label_oldKey.AutoSize = true;
+            this.label_oldKey.Location = new System.Drawing.Point(145, 35);
+            this.label_oldKey.Name = "label_oldKey";
+            this.label_oldKey.Size = new System.Drawing.Size(89, 12);
+            this.label_oldKey.TabIndex = 0;
+            this.label_oldKey.Text = "输入原验证码：";
             // 
             // Form_SystemAdministratorUI
             // 

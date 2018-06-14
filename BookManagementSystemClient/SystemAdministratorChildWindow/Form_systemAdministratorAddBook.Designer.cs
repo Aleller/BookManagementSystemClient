@@ -47,6 +47,7 @@
             this.textBox_CLS = new System.Windows.Forms.TextBox();
             this.label_CLS = new System.Windows.Forms.Label();
             this.button_submit = new System.Windows.Forms.Button();
+            this.button_addHolding = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label_MarcNo
@@ -195,18 +196,30 @@
             // 
             // button_submit
             // 
-            this.button_submit.Location = new System.Drawing.Point(550, 289);
+            this.button_submit.Location = new System.Drawing.Point(550, 287);
             this.button_submit.Name = "button_submit";
             this.button_submit.Size = new System.Drawing.Size(75, 23);
             this.button_submit.TabIndex = 18;
             this.button_submit.Text = "提交";
             this.button_submit.UseVisualStyleBackColor = true;
+            this.button_submit.Click += new System.EventHandler(this.button_submit_Click);
+            // 
+            // button_addHolding
+            // 
+            this.button_addHolding.Location = new System.Drawing.Point(531, 336);
+            this.button_addHolding.Name = "button_addHolding";
+            this.button_addHolding.Size = new System.Drawing.Size(94, 23);
+            this.button_addHolding.TabIndex = 23;
+            this.button_addHolding.Text = "添加馆藏信息";
+            this.button_addHolding.UseVisualStyleBackColor = true;
+            this.button_addHolding.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_systemAdministratorAddBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(718, 332);
+            this.ClientSize = new System.Drawing.Size(718, 383);
+            this.Controls.Add(this.button_addHolding);
             this.Controls.Add(this.button_submit);
             this.Controls.Add(this.label_CLS);
             this.Controls.Add(this.textBox_CLS);
@@ -254,5 +267,6 @@
         private System.Windows.Forms.TextBox textBox_CLS;
         private System.Windows.Forms.Label label_CLS;
         private System.Windows.Forms.Button button_submit;
+        private System.Windows.Forms.Button button_addHolding;
     }
 }
