@@ -49,7 +49,6 @@
             this.label_MarcNo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_searchMarcNo = new System.Windows.Forms.TextBox();
-            this.textBox_searchISBN = new System.Windows.Forms.TextBox();
             this.button_search = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,6 +60,7 @@
             this.button_submit.TabIndex = 37;
             this.button_submit.Text = "提交";
             this.button_submit.UseVisualStyleBackColor = true;
+            this.button_submit.Click += new System.EventHandler(this.button_submit_Click);
             // 
             // label_CLS
             // 
@@ -211,23 +211,16 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(197, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 12);
+            this.label1.Size = new System.Drawing.Size(185, 12);
             this.label1.TabIndex = 38;
-            this.label1.Text = "请先输入修改图书的唯一标识符和ISBN号：";
+            this.label1.Text = "请先输入修改图书的唯一标识符：";
             // 
             // textBox_searchMarcNo
             // 
-            this.textBox_searchMarcNo.Location = new System.Drawing.Point(41, 36);
+            this.textBox_searchMarcNo.Location = new System.Drawing.Point(130, 36);
             this.textBox_searchMarcNo.Name = "textBox_searchMarcNo";
-            this.textBox_searchMarcNo.Size = new System.Drawing.Size(192, 21);
+            this.textBox_searchMarcNo.Size = new System.Drawing.Size(383, 21);
             this.textBox_searchMarcNo.TabIndex = 39;
-            // 
-            // textBox_searchISBN
-            // 
-            this.textBox_searchISBN.Location = new System.Drawing.Point(269, 36);
-            this.textBox_searchISBN.Name = "textBox_searchISBN";
-            this.textBox_searchISBN.Size = new System.Drawing.Size(192, 21);
-            this.textBox_searchISBN.TabIndex = 40;
             // 
             // button_search
             // 
@@ -237,6 +230,7 @@
             this.button_search.TabIndex = 41;
             this.button_search.Text = "确定";
             this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // Form_systemAdministratorUpdateBook
             // 
@@ -244,7 +238,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(630, 376);
             this.Controls.Add(this.button_search);
-            this.Controls.Add(this.textBox_searchISBN);
             this.Controls.Add(this.textBox_searchMarcNo);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_submit);
@@ -296,7 +289,6 @@
         private System.Windows.Forms.Label label_MarcNo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_searchMarcNo;
-        private System.Windows.Forms.TextBox textBox_searchISBN;
         private System.Windows.Forms.Button button_search;
     }
 }
